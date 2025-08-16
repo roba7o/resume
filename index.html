@@ -16,8 +16,8 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -34,7 +34,7 @@
 
         /* Left Sidebar */
         .sidebar {
-            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(180deg, #1e1e1e 0%, #252526 100%);
             color: white;
             padding: 40px 30px;
             position: relative;
@@ -115,7 +115,7 @@
         .contact-item i {
             width: 20px;
             margin-right: 15px;
-            color: #3498db;
+            color: #569cd6;
         }
 
         .contact-item a {
@@ -131,7 +131,7 @@
         .sidebar-section h3 {
             font-size: 1.1em;
             margin-bottom: 20px;
-            color: #3498db;
+            color: #569cd6;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
@@ -157,7 +157,7 @@
 
         .skill-fill {
             height: 100%;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
+            background: linear-gradient(90deg, #569cd6, #4ec9b0);
             border-radius: 3px;
             width: 0;
             transition: width 1.5s ease-in-out;
@@ -166,8 +166,12 @@
         /* Main Content */
         .main-content {
             padding: 50px 60px;
-            background: white;
+            background: #252526;
+            border-radius: 8px;
+            border: 1px solid #3c3c3c;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             overflow-y: auto;
+            color: #ffffff;
         }
 
         .section {
@@ -186,7 +190,7 @@
             font-size: 2em;
             font-weight: 700;
             margin-bottom: 30px;
-            color: #2c3e50;
+            color: #ffffff;
             position: relative;
             display: inline-block;
         }
@@ -198,7 +202,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
+            background: linear-gradient(90deg, #569cd6, #4ec9b0);
             transition: width 0.8s ease;
         }
 
@@ -213,11 +217,11 @@
         }
 
         .card {
-            background: white;
-            border-radius: 15px;
+            background: #2d2d30;
+            border-radius: 6px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid #3c3c3c;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -230,14 +234,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
+            background: linear-gradient(90deg, #569cd6, #4ec9b0);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-color: #569cd6;
         }
 
         .card:hover::before {
@@ -246,14 +251,14 @@
 
         .card-icon {
             font-size: 2.5em;
-            color: #3498db;
+            color: #569cd6;
             margin-bottom: 20px;
         }
 
         .card h3 {
             font-size: 1.3em;
             margin-bottom: 15px;
-            color: #2c3e50;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -265,14 +270,14 @@
             margin-bottom: 8px;
             position: relative;
             padding-left: 20px;
-            color: #666;
+            color: #e6e6e6;
         }
 
         .card li::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: #569cd6;
             font-weight: bold;
         }
 
@@ -300,7 +305,7 @@
 
         .timeline-date {
             font-size: 0.9em;
-            color: #3498db;
+            color: #569cd6;
             font-weight: 600;
             margin-bottom: 5px;
         }
@@ -308,40 +313,87 @@
         .timeline-title {
             font-size: 1.2em;
             font-weight: 600;
-            color: #2c3e50;
+            color: #ffffff;
             margin-bottom: 5px;
         }
 
         .timeline-subtitle {
-            color: #666;
+            color: #e6e6e6;
             font-style: italic;
             margin-bottom: 10px;
         }
 
         .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
         }
 
         .interest-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
+            background: #2d2d30;
+            color: #e6e6e6;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #3c3c3c;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(86, 156, 214, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .interest-item:hover::before {
+            left: 100%;
         }
 
         .interest-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px) scale(1.02);
+            border-color: #569cd6;
+            box-shadow: 0 8px 25px rgba(86, 156, 214, 0.2);
+            color: #ffffff;
+        }
+
+        .interest-item.clicked {
+            animation: pulse 0.6s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .interest-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #569cd6;
+            transition: all 0.3s ease;
+        }
+
+        .interest-item:hover .interest-icon {
+            color: #4ec9b0;
+            transform: scale(1.1);
+        }
+
+        .interest-item span {
+            margin: 0;
+            font-size: 0.9em;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         /* Animations */
@@ -433,9 +485,7 @@
     </style>
 </head>
 <body>
-    <div class="loading" id="loading">
-        <div class="loading-spinner"></div>
-    </div>
+    <!-- Loading removed for debugging -->
 
     <div class="parallax-bg"></div>
 
@@ -447,6 +497,13 @@
                     <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Matthew" class="avatar" id="avatar">
                     <h1>Robert Hugh Matthew</h1>
                     <p class="title">Data Analytics Engineer</p>
+                    
+                    <div class="about-me-sidebar" style="margin-top: 20px; margin-bottom: 30px;">
+                        <p style="font-size: 0.9em; line-height: 1.6; color: #e6e6e6; margin: 0; text-align: justify;">
+                            I bring a strong quantitative and scientific 
+                            background to every project, building data solutions and pipelines primarily in Python.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="contact-info">
@@ -501,9 +558,9 @@
                 <div class="sidebar-section">
                     <h3>Currently Reading</h3>
                     <ul style="list-style: none; color: rgba(255,255,255,0.8);">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #3498db;"></i>Liar's Poker</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #3498db;"></i>Fundamentals of Analytics Engineering</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #3498db;"></i>No et moi</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #569cd6;"></i>Liar's Poker</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #569cd6;"></i>Fundamentals of Analytics Engineering</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #569cd6;"></i>No et moi</li>
                     </ul>
                 </div>
             </div>
@@ -511,17 +568,6 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <section class="section" id="about">
-                <h2 class="section-title">About Me</h2>
-                <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
-                    <p style="font-size: 1.1em; line-height: 1.8; color: #555; margin: 0;">
-                        After working in biotechnology, I spent 2+ years in automation testing before moving into analytics engineering. 
-                        With an MEng in Chemical Engineering and an MSc in Biotechnology, I bring a strong quantitative and scientific 
-                        background to every project, building data solutions and pipelines primarily in Python.
-                    </p>
-                </div>
-            </section>
-
             <section class="section" id="skills">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="grid">
@@ -606,12 +652,12 @@
             <section class="section" id="education">
                 <h2 class="section-title">Education</h2>
                 <div style="position: relative;">
-                    <div class="timeline-item" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div class="timeline-date">Nov 2021</div>
                         <div class="timeline-title">MSc Industrial Biotechnology</div>
                         <div class="timeline-subtitle">University of Strathclyde (IBioIC)</div>
                     </div>
-                    <div class="timeline-item" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div class="timeline-date">June 2019</div>
                         <div class="timeline-title">MEng Chemical Engineering</div>
                         <div class="timeline-subtitle">University of Strathclyde (iChemE accredited)</div>
@@ -624,57 +670,57 @@
                 <div class="grid" style="grid-template-columns: 1fr; gap: 25px;">
                     
                     <!-- Current Company -->
-                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">[COMPANY NAME], [LOCATION]</h3>
-                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">Nov 2024 - Present</span>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">[COMPANY NAME], [LOCATION]</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Nov 2024 - Present</span>
                         </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Data Analytics Engineer</div>
-                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENT OR RESPONSIBILITY HERE]<br>• [ADD ANOTHER ACHIEVEMENT OR RESPONSIBILITY]<br>• [ADD TECHNOLOGIES/TOOLS USED]</p>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Data Analytics Engineer</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENT OR RESPONSIBILITY HERE]<br>• [ADD ANOTHER ACHIEVEMENT OR RESPONSIBILITY]<br>• [ADD TECHNOLOGIES/TOOLS USED]</p>
                     </div>
 
                     <!-- 2i Company -->
-                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">2i, London UK</h3>
-                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">May 2022 - Nov 2024</span>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">2i, London UK</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">May 2022 - Nov 2024</span>
                         </div>
                         
                         <!-- Job progression within company -->
                         <div style="position: relative;">
                             <div style="margin-bottom: 25px;">
-                                <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Engineer <span style="color: #3498db; font-size: 0.9em; font-weight: 600;">(May 2023 - Nov 2024)</span></div>
-                                <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
+                                <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Engineer <span style="color: #569cd6; font-size: 0.9em; font-weight: 600;">(May 2023 - Nov 2024)</span></div>
+                                <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
                             </div>
                             
                             <!-- Connecting line aligned with job titles -->
                             <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 2px; height: 20px; background: #3498db;"></div>
                             
                             <div style="margin-top: 25px;">
-                                <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Junior Engineer <span style="color: #3498db; font-size: 0.9em; font-weight: 600;">(May 2022 - May 2023)</span></div>
-                                <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM JUNIOR ROLE]<br>• [ADD LEARNING EXPERIENCES OR PROJECTS]<br>• [ADD TOOLS/SKILLS DEVELOPED]</p>
+                                <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Junior Engineer <span style="color: #569cd6; font-size: 0.9em; font-weight: 600;">(May 2022 - May 2023)</span></div>
+                                <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM JUNIOR ROLE]<br>• [ADD LEARNING EXPERIENCES OR PROJECTS]<br>• [ADD TOOLS/SKILLS DEVELOPED]</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Cellexus Company -->
-                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">Cellexus Int., Dundee UK</h3>
-                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">Sept 2021 - March 2022</span>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Cellexus Int., Dundee UK</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Sept 2021 - March 2022</span>
                         </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Technical Application Specialist</div>
-                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY RESPONSIBILITIES OR ACHIEVEMENTS]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNICAL SKILLS USED]</p>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Technical Application Specialist</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY RESPONSIBILITIES OR ACHIEVEMENTS]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNICAL SKILLS USED]</p>
                     </div>
 
                     <!-- BioSep Company -->
-                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">BioSep, Remote UK</h3>
-                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">June 2021 - Sept 2021</span>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">BioSep, Remote UK</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">June 2021 - Sept 2021</span>
                         </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">[INTERNSHIP TITLE]</div>
-                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD MAIN PROJECTS OR RESPONSIBILITIES]<br>• [ADD SKILLS LEARNED OR DEVELOPED]<br>• [ADD ANY NOTABLE ACHIEVEMENTS]</p>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">[INTERNSHIP TITLE]</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD MAIN PROJECTS OR RESPONSIBILITIES]<br>• [ADD SKILLS LEARNED OR DEVELOPED]<br>• [ADD ANY NOTABLE ACHIEVEMENTS]</p>
                     </div>
                 </div>
             </section>
@@ -682,12 +728,12 @@
             <section class="section" id="certifications">
                 <h2 class="section-title">Certifications</h2>
                 <div style="position: relative;">
-                    <div class="timeline-item" style="background: linear-gradient(135deg, #fff8f0 0%, #fdf2e8 100%); border-left: 4px solid #f39c12; padding: 20px; margin-bottom: 20px;">
+                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #ce9178; padding: 20px; margin-bottom: 20px;">
                         <div class="timeline-date" style="font-size: 0.85em;">Sept 2023</div>
                         <div class="timeline-title" style="font-size: 1.0em;">AWS Certified Cloud Practitioner</div>
                         <div class="timeline-subtitle" style="font-size: 0.85em;">Amazon Web Services</div>
                     </div>
-                    <div class="timeline-item" style="background: linear-gradient(135deg, #fff8f0 0%, #fdf2e8 100%); border-left: 4px solid #f39c12; padding: 20px; margin-bottom: 20px;">
+                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #ce9178; padding: 20px; margin-bottom: 20px;">
                         <div class="timeline-date" style="font-size: 0.85em;">July 2022</div>
                         <div class="timeline-title" style="font-size: 1.0em;">TMAP Quality for Cross-functional Teams</div>
                         <div class="timeline-subtitle" style="font-size: 0.85em;">iSQI Certification</div>
@@ -728,31 +774,31 @@
                 <h2 class="section-title">Current Project</h2>
                 <div class="grid">
                     <a href="https://github.com/roba7o/publicite_francais" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="border: 2px solid #3498db; background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); cursor: pointer; transition: all 0.3s ease;">
+                        <div class="card" style="border: 2px solid #569cd6; background: #2d2d30; cursor: pointer; transition: all 0.3s ease;">
                             <div class="card-icon">
                                 <i class="fas fa-language"></i>
                             </div>
-                            <h3>French News Aggregation Pipeline <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 8px; color: #3498db;"></i></h3>
-                            <p style="color: #666; margin-bottom: 15px;">Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.</p>
+                            <h3>French News Aggregation Pipeline <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 8px; color: #569cd6;"></i></h3>
+                            <p style="color: #e6e6e6; margin-bottom: 15px;">Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.</p>
                             
                             <!-- TODO: Remember to review and update these tech stack tags -->
                             <div style="margin: 15px 0;">
-                                <h4 style="font-size: 0.9em; color: #2c3e50; margin-bottom: 8px;">Tech Stack:</h4>
+                                <h4 style="font-size: 0.9em; color: #ffffff; margin-bottom: 8px;">Tech Stack:</h4>
                                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Python 3.x</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">PostgreSQL</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">dbt</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">SQLAlchemy</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Docker</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">BeautifulSoup4</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">pytest</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">ruff</span>
-                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">mypy</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Python 3.x</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">PostgreSQL</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">dbt</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">SQLAlchemy</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Docker</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">BeautifulSoup4</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">pytest</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">ruff</span>
+                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">mypy</span>
                                 </div>
-                                <p style="font-size: 0.85em; color: #666; font-style: italic;">Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables</p>
+                                <p style="font-size: 0.85em; color: #e6e6e6; font-style: italic;">Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables</p>
                             </div>
                             
-                            <span style="background: #3498db; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 600; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);">🚀 Active Development</span>
+                            <span style="background: #2d2d30; color: #4ec9b0; padding: 6px 16px; border-radius: 6px; font-size: 0.9em; font-weight: 600; border: 1px solid #4ec9b0;">🚀 Active Development</span>
                         </div>
                     </a>
                 </div>
@@ -762,36 +808,36 @@
                 <h2 class="section-title">Interests & Hobbies</h2>
                 <div class="interests-grid">
                     <div class="interest-item" data-interest="climbing">
-                        <div class="interest-icon">🧗‍♂️</div>
-                        <h4>Rock Climbing</h4>
+                        <i class="fas fa-mountain interest-icon"></i>
+                        <span>Rock Climbing</span>
                     </div>
                     <div class="interest-item" data-interest="running">
-                        <div class="interest-icon">🏃‍♂️</div>
-                        <h4>Ultramarathons</h4>
+                        <i class="fas fa-running interest-icon"></i>
+                        <span>Ultramarathons</span>
                     </div>
                     <div class="interest-item" data-interest="swimming">
-                        <div class="interest-icon">🏊‍♂️</div>
-                        <h4>Swimming</h4>
+                        <i class="fas fa-swimmer interest-icon"></i>
+                        <span>Swimming</span>
                     </div>
                     <div class="interest-item" data-interest="cycling">
-                        <div class="interest-icon">🚴‍♂️</div>
-                        <h4>Cycling</h4>
+                        <i class="fas fa-bicycle interest-icon"></i>
+                        <span>Cycling</span>
                     </div>
                     <div class="interest-item" data-interest="hiking">
-                        <div class="interest-icon">🥾</div>
-                        <h4>Hiking</h4>
+                        <i class="fas fa-hiking interest-icon"></i>
+                        <span>Hiking</span>
                     </div>
                     <div class="interest-item" data-interest="camping">
-                        <div class="interest-icon">⛺</div>
-                        <h4>Camping</h4>
+                        <i class="fas fa-campground interest-icon"></i>
+                        <span>Camping</span>
                     </div>
                     <div class="interest-item" data-interest="music">
-                        <div class="interest-icon">🎵</div>
-                        <h4>Live Music</h4>
+                        <i class="fas fa-music interest-icon"></i>
+                        <span>Live Music</span>
                     </div>
                     <div class="interest-item" data-interest="coding">
-                        <div class="interest-icon">💻</div>
-                        <h4>Coding</h4>
+                        <i class="fas fa-code interest-icon"></i>
+                        <span>Coding</span>
                     </div>
                 </div>
             </section>
@@ -799,15 +845,7 @@
     </div>
 
     <script>
-        // Loading screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loading').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loading').style.display = 'none';
-                }, 500);
-            }, 1000);
-        });
+        // Loading screen removed for debugging
 
         // Intersection Observer for scroll animations
         const observerOptions = {
@@ -846,6 +884,13 @@
             }, 500);
         }
 
+        // Simple hobbies effects (debugging)
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded successfully');
+            const interestItems = document.querySelectorAll('.interest-item');
+            console.log('Found', interestItems.length, 'interest items');
+        });
+
         // Parallax effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -859,19 +904,6 @@
         avatar.style.animation = 'float 3s ease-in-out infinite';
         avatar.style.animationDelay = '2s';
 
-        // Interactive interest items
-        document.querySelectorAll('.interest-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const interest = this.getAttribute('data-interest');
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1.05)';
-                }, 150);
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 300);
-            });
-        });
 
         // Smooth scrolling for navigation (if added later)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
