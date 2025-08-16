@@ -17,9 +17,33 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #ffffff;
-            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 50%, #1a1a1a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(86, 156, 214, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(78, 201, 176, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(156, 214, 86, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .main-container {
@@ -63,28 +87,64 @@
             margin-bottom: 40px;
         }
 
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+        .flip-container {
+            perspective: 1000px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto 20px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: flip 4s infinite linear;
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.2);
             object-fit: cover;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
-        .avatar:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        @keyframes flip {
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(180deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
         }
+
 
         .profile h1 {
             font-size: 1.8em;
             font-weight: 600;
             margin-bottom: 10px;
             opacity: 0;
-            animation: slideInLeft 1s ease 0.3s forwards;
+            animation: slideInLeft 1s ease 0.6s forwards;
         }
 
         .profile .title {
@@ -92,21 +152,14 @@
             opacity: 0.8;
             font-weight: 300;
             opacity: 0;
-            animation: slideInLeft 1s ease 0.5s forwards;
+            animation: slideInLeft 1s ease 0.8s forwards;
         }
 
-        .typing-cursor {
-            display: inline-block;
-            background-color: #569cd6;
-            margin-left: 3px;
-            width: 2px;
-            animation: typing-blink 1s infinite;
+        .about-me-sidebar {
+            opacity: 0;
+            animation: slideInLeft 1s ease 1s forwards;
         }
 
-        @keyframes typing-blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
 
         .contact-info {
             margin-bottom: 40px;
@@ -476,7 +529,16 @@
         <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="profile">
-                    <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Matthew" class="avatar" id="avatar">
+                    <div class="flip-container">
+                        <div class="flipper">
+                            <div class="front">
+                                <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Matthew" class="avatar">
+                            </div>
+                            <div class="back">
+                                <img src="images/DSF0308_1000_NORMAL.jpg" alt="Robert Matthew Climbing" class="avatar">
+                            </div>
+                        </div>
+                    </div>
                     <h1>Robert Hugh Matthew</h1>
                     <p class="title">Data Analytics Engineer</p>
                     
@@ -649,16 +711,24 @@
 
             <section class="section" id="education">
                 <h2 class="section-title">Education</h2>
-                <div style="position: relative;">
-                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div class="timeline-date">Nov 2021</div>
-                        <div class="timeline-title">MSc Industrial Biotechnology</div>
-                        <div class="timeline-subtitle">University of Strathclyde (IBioIC)</div>
+                <div class="grid" style="grid-template-columns: 1fr; gap: 25px;">
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">University of Strathclyde</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Nov 2021</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">MSc Industrial Biotechnology</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">IBioIC Programme</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Advanced study in industrial biotechnology and bioprocessing<br>• Focus on sustainable manufacturing and green chemistry<br>• Research project in catalysis and enzyme technology</p>
                     </div>
-                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div class="timeline-date">June 2019</div>
-                        <div class="timeline-title">MEng Chemical Engineering</div>
-                        <div class="timeline-subtitle">University of Strathclyde (iChemE accredited)</div>
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">University of Strathclyde</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">June 2019</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">MEng Chemical Engineering</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">iChemE Accredited</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Comprehensive engineering degree covering process design and optimization<br>• Strong foundation in mathematics, chemistry, and engineering principles<br>• Final year project in chemical process simulation</p>
                     </div>
                 </div>
             </section>
@@ -670,62 +740,64 @@
                     <!-- Current Company -->
                     <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">[COMPANY NAME], [LOCATION]</h3>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">[COMPANY NAME]</h3>
                             <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Nov 2024 - Present</span>
                         </div>
                         <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Data Analytics Engineer</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">[LOCATION]</div>
                         <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENT OR RESPONSIBILITY HERE]<br>• [ADD ANOTHER ACHIEVEMENT OR RESPONSIBILITY]<br>• [ADD TECHNOLOGIES/TOOLS USED]</p>
                     </div>
 
                     <!-- 2i Company -->
                     <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">2i, London UK</h3>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">2i</h3>
                             <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">May 2022 - Nov 2024</span>
                         </div>
                         
-                        <!-- Job progression within company -->
-                        <div style="position: relative;">
-                            <div style="margin-bottom: 25px;">
-                                <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Engineer <span style="color: #569cd6; font-size: 0.9em; font-weight: 600;">(May 2023 - Nov 2024)</span></div>
-                                <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
-                            </div>
-                            
-                            <!-- Connecting line aligned with job titles -->
-                            <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 2px; height: 20px; background: #3498db;"></div>
-                            
-                            <div style="margin-top: 25px;">
-                                <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Junior Engineer <span style="color: #569cd6; font-size: 0.9em; font-weight: 600;">(May 2022 - May 2023)</span></div>
-                                <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM JUNIOR ROLE]<br>• [ADD LEARNING EXPERIENCES OR PROJECTS]<br>• [ADD TOOLS/SKILLS DEVELOPED]</p>
-                            </div>
-                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Engineer / Junior Engineer</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">London, UK</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
                     </div>
 
                     <!-- Cellexus Company -->
                     <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Cellexus Int., Dundee UK</h3>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Cellexus International</h3>
                             <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Sept 2021 - March 2022</span>
                         </div>
                         <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Technical Application Specialist</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Dundee, UK</div>
                         <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY RESPONSIBILITIES OR ACHIEVEMENTS]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNICAL SKILLS USED]</p>
                     </div>
 
                     <!-- BioSep Company -->
                     <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">BioSep, Remote UK</h3>
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">BioSep</h3>
                             <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">June 2021 - Sept 2021</span>
                         </div>
                         <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">[INTERNSHIP TITLE]</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Remote, UK</div>
                         <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD MAIN PROJECTS OR RESPONSIBILITIES]<br>• [ADD SKILLS LEARNED OR DEVELOPED]<br>• [ADD ANY NOTABLE ACHIEVEMENTS]</p>
+                    </div>
+
+                    <!-- Polish Academy Traineeship -->
+                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Jerzy Haber Institute of Catalysis and Surface Chemistry, Polish Academy of Sciences</h3>
+                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Jan 2019 - Apr 2019</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Traineeship Student</div>
+                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Krakow, Poland</div>
+                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Erasmus traineeship exchange at the Instytut Katalizy i Fizykochemii Powierzchni Polskiej Akademii Nauk (IKiFP PAN)<br>• Gained international research experience in catalysis and surface chemistry<br>• Collaborated with Polish research teams on scientific projects</p>
                     </div>
                 </div>
             </section>
 
             <section class="section" id="certifications">
                 <h2 class="section-title">Certifications</h2>
-                <div class="grid">
+                <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
                     <div class="card">
                         <div class="card-icon">
                             <i class="fab fa-aws"></i>
@@ -740,6 +812,14 @@
                         </div>
                         <h3>TMAP Quality for Cross-functional Teams</h3>
                         <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">iSQI Certification</p>
+                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">July 2022</span>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Selenium Webdriver; Cypress; Rest API</h3>
+                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">Edgewords</p>
                         <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">July 2022</span>
                     </div>
                 </div>
@@ -889,10 +969,7 @@
             parallax.style.transform = `translateY(${speed}px)`;
         });
 
-        // Avatar animation
-        const avatar = document.getElementById('avatar');
-        avatar.style.animation = 'float 3s ease-in-out infinite';
-        avatar.style.animationDelay = '2s';
+        // Avatar animation - removed since we have coin flip now
 
 
         // Smooth scrolling for navigation (if added later)
@@ -909,7 +986,7 @@
             });
         });
 
-        // Enhanced 3D tilt effect for cards
+        // Adaptive subtle 3D tilt effect for cards
         document.addEventListener('mousemove', (e) => {
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -920,13 +997,17 @@
                 if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / 8;
-                    const rotateY = (centerX - x) / 8;
                     
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px) scale(1.02)`;
-                    card.style.boxShadow = `0 20px 40px rgba(86, 156, 214, 0.3), 0 0 30px rgba(78, 201, 176, 0.2)`;
+                    // Adjust tilt intensity based on card width - wider cards get less tilt
+                    const widthFactor = Math.max(50, rect.width / 8); // Minimum 50, scales with width
+                    
+                    const rotateX = (y - centerY) / widthFactor;
+                    const rotateY = (centerX - x) / widthFactor;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(2px)`;
+                    card.style.boxShadow = `0 6px 16px rgba(86, 156, 214, 0.15)`;
                 } else {
-                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
                     card.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
                 }
             });
@@ -957,19 +1038,7 @@
             }, speed);
         }
 
-        // Apply typing effect to name only
-        setTimeout(() => {
-            const nameElement = document.querySelector('.profile h1');
-            const titleElement = document.querySelector('.profile .title');
-            
-            if (nameElement && titleElement) {
-                nameElement.style.opacity = '1';
-                titleElement.style.opacity = '1';
-                
-                typeWriter(nameElement, 'Robert Hugh Matthew', 80);
-                // Title appears normally without typing effect
-            }
-        }, 1500);
+        // Name and title now animate via CSS only
 
         // Add particles effect (subtle)
         function createParticle() {
@@ -1065,8 +1134,107 @@
             });
         }
         
-        // Start matrix rain
-        createMatrixRain();
+        
+        
+        // Brownian Motion Particle System
+        function createBrownianMotion() {
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+                opacity: 0.4;
+            `;
+            document.body.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const numParticles = 120;
+            
+            // Particle class with Brownian motion
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 3 + 1;
+                    this.color = this.getRandomColor();
+                    this.opacity = Math.random() * 0.6 + 0.3;
+                }
+                
+                getRandomColor() {
+                    const colors = ['86, 156, 214', '78, 201, 176', '156, 214, 86'];
+                    return colors[Math.floor(Math.random() * colors.length)];
+                }
+                
+                update() {
+                    // Brownian motion - random walk with slight drift
+                    this.vx += (Math.random() - 0.5) * 0.1;
+                    this.vy += (Math.random() - 0.5) * 0.1;
+                    
+                    // Damping to prevent particles from moving too fast
+                    this.vx *= 0.98;
+                    this.vy *= 0.98;
+                    
+                    // Update position
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    
+                    // Wrap around screen edges
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                    if (this.y > canvas.height) this.y = 0;
+                }
+                
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            // Create particles
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+            
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+        
+        
+        // Start Brownian motion with more particles
+        createBrownianMotion();
 
         // Initialize timeline animations with delays
         setTimeout(() => {
