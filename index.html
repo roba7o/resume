@@ -95,6 +95,19 @@
             animation: slideInLeft 1s ease 0.5s forwards;
         }
 
+        .typing-cursor {
+            display: inline-block;
+            background-color: #569cd6;
+            margin-left: 3px;
+            width: 2px;
+            animation: typing-blink 1s infinite;
+        }
+
+        @keyframes typing-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
         .contact-info {
             margin-bottom: 40px;
         }
@@ -224,6 +237,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
         }
 
         .card::before {
@@ -322,77 +337,45 @@
             margin-bottom: 10px;
         }
 
-        .interests-grid {
+        .interests-grid-sidebar {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .interest-item {
-            background: #2d2d30;
+        .interest-item-sidebar {
             color: #e6e6e6;
-            padding: 12px 20px;
-            border-radius: 6px;
-            border: 1px solid #3c3c3c;
+            padding: 8px 12px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 10px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
+            font-size: 0.9em;
         }
 
-        .interest-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(86, 156, 214, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .interest-item:hover::before {
-            left: 100%;
-        }
-
-        .interest-item:hover {
-            transform: translateY(-2px) scale(1.02);
-            border-color: #569cd6;
-            box-shadow: 0 8px 25px rgba(86, 156, 214, 0.2);
+        .interest-item-sidebar:hover {
+            background: rgba(86, 156, 214, 0.1);
             color: #ffffff;
+            transform: translateX(5px);
         }
 
-        .interest-item.clicked {
-            animation: pulse 0.6s ease;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .interest-icon {
-            font-size: 1.1em;
+        .interest-item-sidebar .interest-icon {
+            font-size: 1em;
             color: #569cd6;
+            width: 16px;
             transition: all 0.3s ease;
         }
 
-        .interest-item:hover .interest-icon {
+        .interest-item-sidebar:hover .interest-icon {
             color: #4ec9b0;
-            transform: scale(1.1);
         }
 
-        .interest-item span {
+        .interest-item-sidebar span {
             margin: 0;
             font-size: 0.9em;
-            font-weight: 500;
-            white-space: nowrap;
+            font-weight: 400;
         }
 
         /* Animations */
@@ -534,22 +517,40 @@
 
                 <div class="sidebar-section">
                     <h3>Languages</h3>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>English</span>
-                            <span>Native</span>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; border-left: 3px solid #569cd6;">
+                            <span style="font-size: 0.9em; color: #ffffff;">English</span>
+                            <span style="font-size: 0.85em; color: #4ec9b0; font-weight: 500;">Native</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" data-width="100"></div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; border-left: 3px solid #569cd6;">
+                            <span style="font-size: 0.9em; color: #ffffff;">French</span>
+                            <span style="font-size: 0.85em; color: #4ec9b0; font-weight: 500;">B2</span>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>French</span>
-                            <span>B2</span>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Interests & Hobbies</h3>
+                    <div class="interests-grid-sidebar">
+                        <div class="interest-item-sidebar" data-interest="climbing">
+                            <i class="fas fa-mountain interest-icon"></i>
+                            <span>Rock Climbing</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" data-width="75"></div>
+                        <div class="interest-item-sidebar" data-interest="running">
+                            <i class="fas fa-running interest-icon"></i>
+                            <span>Ultramarathons</span>
+                        </div>
+                        <div class="interest-item-sidebar" data-interest="swimming">
+                            <i class="fas fa-swimmer interest-icon"></i>
+                            <span>Swimming</span>
+                        </div>
+                        <div class="interest-item-sidebar" data-interest="cycling">
+                            <i class="fas fa-bicycle interest-icon"></i>
+                            <span>Cycling</span>
+                        </div>
+                        <div class="interest-item-sidebar" data-interest="coding">
+                            <i class="fas fa-code interest-icon"></i>
+                            <span>Coding</span>
                         </div>
                     </div>
                 </div>
@@ -807,31 +808,6 @@
                 </div>
             </section>
 
-            <section class="section" id="interests">
-                <h2 class="section-title">Interests & Hobbies</h2>
-                <div class="interests-grid">
-                    <div class="interest-item" data-interest="climbing">
-                        <i class="fas fa-mountain interest-icon"></i>
-                        <span>Rock Climbing</span>
-                    </div>
-                    <div class="interest-item" data-interest="running">
-                        <i class="fas fa-running interest-icon"></i>
-                        <span>Ultramarathons</span>
-                    </div>
-                    <div class="interest-item" data-interest="swimming">
-                        <i class="fas fa-swimmer interest-icon"></i>
-                        <span>Swimming</span>
-                    </div>
-                    <div class="interest-item" data-interest="cycling">
-                        <i class="fas fa-bicycle interest-icon"></i>
-                        <span>Cycling</span>
-                    </div>
-                    <div class="interest-item" data-interest="coding">
-                        <i class="fas fa-code interest-icon"></i>
-                        <span>Coding</span>
-                    </div>
-                </div>
-            </section>
         </main>
     </div>
 
@@ -852,6 +828,17 @@
                     // Animate skill bars when they come into view
                     if (entry.target.classList.contains('sidebar')) {
                         animateSkillBars();
+                    }
+                    
+                    // Staggered card animations
+                    if (entry.target.classList.contains('section')) {
+                        const cards = entry.target.querySelectorAll('.card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.transform = 'translateY(0) scale(1)';
+                                card.style.opacity = '1';
+                            }, index * 150);
+                        });
                     }
                 }
             });
@@ -878,18 +865,18 @@
         // Stage 1: Staggered entrance animation
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Page loaded successfully');
-            const interestItems = document.querySelectorAll('.interest-item');
+            const interestItems = document.querySelectorAll('.interest-item-sidebar');
             console.log('Found', interestItems.length, 'interest items');
             
             // Add staggered entrance animation
             interestItems.forEach((item, index) => {
                 item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
+                item.style.transform = 'translateX(-20px)';
                 
                 setTimeout(() => {
                     item.style.transition = 'all 0.6s ease';
                     item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
+                    item.style.transform = 'translateX(0)';
                 }, index * 150);
             });
         });
@@ -922,7 +909,7 @@
             });
         });
 
-        // Add subtle mouse follow effect
+        // Enhanced 3D tilt effect for cards
         document.addEventListener('mousemove', (e) => {
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -933,17 +920,29 @@
                 if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / 10;
-                    const rotateY = (centerX - x) / 10;
+                    const rotateX = (y - centerY) / 8;
+                    const rotateY = (centerX - x) / 8;
                     
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px) scale(1.02)`;
+                    card.style.boxShadow = `0 20px 40px rgba(86, 156, 214, 0.3), 0 0 30px rgba(78, 201, 176, 0.2)`;
                 } else {
-                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
+                    card.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
                 }
             });
         });
 
-        // Typing effect for title (optional)
+        // Add card click effect
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'perspective(1000px) scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'perspective(1000px) scale(1)';
+                }, 150);
+            });
+        });
+
+        // Typing effect for title
         function typeWriter(element, text, speed = 100) {
             element.innerHTML = '';
             let i = 0;
@@ -952,10 +951,25 @@
                     element.innerHTML += text.charAt(i);
                     i++;
                 } else {
+                    element.innerHTML += '<span class="typing-cursor">&nbsp;</span>';
                     clearInterval(timer);
                 }
             }, speed);
         }
+
+        // Apply typing effect to name only
+        setTimeout(() => {
+            const nameElement = document.querySelector('.profile h1');
+            const titleElement = document.querySelector('.profile .title');
+            
+            if (nameElement && titleElement) {
+                nameElement.style.opacity = '1';
+                titleElement.style.opacity = '1';
+                
+                typeWriter(nameElement, 'Robert Hugh Matthew', 80);
+                // Title appears normally without typing effect
+            }
+        }, 1500);
 
         // Add particles effect (subtle)
         function createParticle() {
@@ -995,6 +1009,64 @@
 
         // Create particles occasionally
         setInterval(createParticle, 3000);
+
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+                opacity: 0.1;
+            `;
+            document.body.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const chars = '01';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(46, 46, 46, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#569cd6';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(draw, 100);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+        
+        // Start matrix rain
+        createMatrixRain();
 
         // Initialize timeline animations with delays
         setTimeout(() => {
