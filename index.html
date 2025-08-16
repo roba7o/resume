@@ -28,7 +28,7 @@
             min-height: 100vh;
             max-width: 1600px;
             margin: 0 auto;
-            background: white;
+            background: transparent;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
 
@@ -167,7 +167,6 @@
         .main-content {
             padding: 50px 60px;
             background: #252526;
-            border-radius: 8px;
             border: 1px solid #3c3c3c;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             overflow-y: auto;
@@ -727,16 +726,22 @@
 
             <section class="section" id="certifications">
                 <h2 class="section-title">Certifications</h2>
-                <div style="position: relative;">
-                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #ce9178; padding: 20px; margin-bottom: 20px;">
-                        <div class="timeline-date" style="font-size: 0.85em;">Sept 2023</div>
-                        <div class="timeline-title" style="font-size: 1.0em;">AWS Certified Cloud Practitioner</div>
-                        <div class="timeline-subtitle" style="font-size: 0.85em;">Amazon Web Services</div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">Amazon Web Services</p>
+                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">Sept 2023</span>
                     </div>
-                    <div class="timeline-item" style="background: #2d2d30; border-left: 4px solid #ce9178; padding: 20px; margin-bottom: 20px;">
-                        <div class="timeline-date" style="font-size: 0.85em;">July 2022</div>
-                        <div class="timeline-title" style="font-size: 1.0em;">TMAP Quality for Cross-functional Teams</div>
-                        <div class="timeline-subtitle" style="font-size: 0.85em;">iSQI Certification</div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>TMAP Quality for Cross-functional Teams</h3>
+                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">iSQI Certification</p>
+                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">July 2022</span>
                     </div>
                 </div>
             </section>
@@ -823,18 +828,6 @@
                         <i class="fas fa-bicycle interest-icon"></i>
                         <span>Cycling</span>
                     </div>
-                    <div class="interest-item" data-interest="hiking">
-                        <i class="fas fa-hiking interest-icon"></i>
-                        <span>Hiking</span>
-                    </div>
-                    <div class="interest-item" data-interest="camping">
-                        <i class="fas fa-campground interest-icon"></i>
-                        <span>Camping</span>
-                    </div>
-                    <div class="interest-item" data-interest="music">
-                        <i class="fas fa-music interest-icon"></i>
-                        <span>Live Music</span>
-                    </div>
                     <div class="interest-item" data-interest="coding">
                         <i class="fas fa-code interest-icon"></i>
                         <span>Coding</span>
@@ -884,11 +877,23 @@
             }, 500);
         }
 
-        // Simple hobbies effects (debugging)
+        // Stage 1: Staggered entrance animation
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Page loaded successfully');
             const interestItems = document.querySelectorAll('.interest-item');
             console.log('Found', interestItems.length, 'interest items');
+            
+            // Add staggered entrance animation
+            interestItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
         });
 
         // Parallax effect
