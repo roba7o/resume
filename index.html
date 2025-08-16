@@ -278,18 +278,9 @@
 
         .timeline {
             position: relative;
-            padding-left: 30px;
+            padding-left: 0px;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #3498db, #2ecc71);
-        }
 
         .timeline-item {
             position: relative;
@@ -301,18 +292,6 @@
             transition: all 0.3s ease;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -37px;
-            top: 25px;
-            width: 12px;
-            height: 12px;
-            background: #3498db;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #3498db;
-        }
 
         .timeline-item:hover {
             transform: translateX(10px);
@@ -467,7 +446,7 @@
                 <div class="profile">
                     <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Matthew" class="avatar" id="avatar">
                     <h1>Robert Hugh Matthew</h1>
-                    <p class="title">Cloud Engineer & Data Analyst</p>
+                    <p class="title">Data Analytics Engineer</p>
                 </div>
 
                 <div class="contact-info">
@@ -532,6 +511,17 @@
 
         <!-- Main Content -->
         <main class="main-content">
+            <section class="section" id="about">
+                <h2 class="section-title">About Me</h2>
+                <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #555; margin: 0;">
+                        After working in biotechnology, I spent 2+ years in automation testing before moving into analytics engineering. 
+                        With an MEng in Chemical Engineering and an MSc in Biotechnology, I bring a strong quantitative and scientific 
+                        background to every project, building data solutions and pipelines primarily in Python.
+                    </p>
+                </div>
+            </section>
+
             <section class="section" id="skills">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="grid">
@@ -541,10 +531,23 @@
                         </div>
                         <h3>Python & Data</h3>
                         <ul>
-                            <li>Python, Pandas, SQL</li>
-                            <li>Snowflake, BigQuery</li>
-                            <li>Custom ETLs, Database Management</li>
-                            <li>Data Analytics, BI Tools</li>
+                            <li>Python 3.x, Pandas, SQLAlchemy <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <li>PostgreSQL, SQL, Database Management <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Custom ETLs, dbt (Data Build Tool) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Data Analytics, BI Tools (PowerBI, Sigma) <span style="background: #9b59b6; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Exposure</span></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud / Platform</h3>
+                        <ul>
+                            <li>AWS (S3, Redshift) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Snowflake, BigQuery <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
+                            <li>Cloud data warehousing <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Platform analytics <span style="background: #9b59b6; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Exposure</span></li>
+                            <!-- ADD TECH STACK SPECIFIC TAG: Multi-cloud, Data lakes -->
                         </ul>
                     </div>
                     <div class="card">
@@ -553,9 +556,11 @@
                         </div>
                         <h3>Testing & Automation</h3>
                         <ul>
-                            <li>Selenium (Python & Java)</li>
-                            <li>Git version control</li>
-                            <li>Test automation frameworks</li>
+                            <li>Selenium (Python & Java) <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <li>pytest, Cucumber BDD <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Git version control, GitLab <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <li>Test automation frameworks <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <!-- ADD TECH STACK SPECIFIC TAG: Testing frameworks, Regression testing -->
                         </ul>
                     </div>
                     <div class="card">
@@ -564,20 +569,35 @@
                         </div>
                         <h3>DevOps & Pipelines</h3>
                         <ul>
-                            <li>CI/CD (GitHub Actions, GitLab, Jenkins)</li>
-                            <li>Docker containerization</li>
-                            <li>Bash Scripting, dbt</li>
+                            <li>Docker & Docker Compose <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>CI/CD (GitHub Actions, GitLab, Jenkins) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Bash Scripting, Make automation <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <li>Pipeline orchestration <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
+                            <!-- ADD TECH STACK SPECIFIC TAG: Container orchestration, Kubernetes -->
                         </ul>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <h3>Web & Backend</h3>
+                        <h3>Web Development</h3>
                         <ul>
-                            <li>Django framework</li>
-                            <li>HTML, JavaScript</li>
-                            <li>PostgreSQL</li>
+                            <li>Django framework <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>HTML, JavaScript <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>API development <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
+                            <!-- ADD TECH STACK SPECIFIC TAG: Frontend frameworks, REST APIs -->
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Data Tools</h3>
+                        <ul>
+                            <li>BeautifulSoup4, requests (Web Scraping) <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <li>ruff, mypy (Code Quality) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
+                            <li>Data extraction & processing <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
+                            <!-- ADD TECH STACK SPECIFIC TAG: Data validation, ETL tools -->
                         </ul>
                     </div>
                 </div>
@@ -585,13 +605,13 @@
 
             <section class="section" id="education">
                 <h2 class="section-title">Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <div style="position: relative;">
+                    <div class="timeline-item" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
                         <div class="timeline-date">Nov 2021</div>
                         <div class="timeline-title">MSc Industrial Biotechnology</div>
                         <div class="timeline-subtitle">University of Strathclyde (IBioIC)</div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
                         <div class="timeline-date">June 2019</div>
                         <div class="timeline-title">MEng Chemical Engineering</div>
                         <div class="timeline-subtitle">University of Strathclyde (iChemE accredited)</div>
@@ -599,18 +619,78 @@
                 </div>
             </section>
 
+            <section class="section" id="experience">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="grid" style="grid-template-columns: 1fr; gap: 25px;">
+                    
+                    <!-- Current Company -->
+                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">[COMPANY NAME], [LOCATION]</h3>
+                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">Nov 2024 - Present</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Data Analytics Engineer</div>
+                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENT OR RESPONSIBILITY HERE]<br>• [ADD ANOTHER ACHIEVEMENT OR RESPONSIBILITY]<br>• [ADD TECHNOLOGIES/TOOLS USED]</p>
+                    </div>
+
+                    <!-- 2i Company -->
+                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">2i, London UK</h3>
+                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">May 2022 - Nov 2024</span>
+                        </div>
+                        
+                        <!-- Job progression within company -->
+                        <div style="position: relative;">
+                            <div style="margin-bottom: 25px;">
+                                <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Engineer <span style="color: #3498db; font-size: 0.9em; font-weight: 600;">(May 2023 - Nov 2024)</span></div>
+                                <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
+                            </div>
+                            
+                            <!-- Connecting line aligned with job titles -->
+                            <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 2px; height: 20px; background: #3498db;"></div>
+                            
+                            <div style="margin-top: 25px;">
+                                <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Junior Engineer <span style="color: #3498db; font-size: 0.9em; font-weight: 600;">(May 2022 - May 2023)</span></div>
+                                <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM JUNIOR ROLE]<br>• [ADD LEARNING EXPERIENCES OR PROJECTS]<br>• [ADD TOOLS/SKILLS DEVELOPED]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cellexus Company -->
+                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">Cellexus Int., Dundee UK</h3>
+                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">Sept 2021 - March 2022</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">Technical Application Specialist</div>
+                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY RESPONSIBILITIES OR ACHIEVEMENTS]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNICAL SKILLS USED]</p>
+                    </div>
+
+                    <!-- BioSep Company -->
+                    <div class="card" style="background: linear-gradient(135deg, #f8fcff 0%, #e8f4fd 100%); border-left: 4px solid #3498db;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #2c3e50; margin: 0; font-size: 1.2em;">BioSep, Remote UK</h3>
+                            <span style="color: #3498db; font-weight: 600; font-size: 0.9em;">June 2021 - Sept 2021</span>
+                        </div>
+                        <div class="timeline-title" style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;">[INTERNSHIP TITLE]</div>
+                        <p style="color: #666; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD MAIN PROJECTS OR RESPONSIBILITIES]<br>• [ADD SKILLS LEARNED OR DEVELOPED]<br>• [ADD ANY NOTABLE ACHIEVEMENTS]</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="section" id="certifications">
                 <h2 class="section-title">Certifications</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Sept 2023</div>
-                        <div class="timeline-title">AWS Certified Cloud Practitioner</div>
-                        <div class="timeline-subtitle">Amazon Web Services</div>
+                <div style="position: relative;">
+                    <div class="timeline-item" style="background: linear-gradient(135deg, #fff8f0 0%, #fdf2e8 100%); border-left: 4px solid #f39c12; padding: 20px; margin-bottom: 20px;">
+                        <div class="timeline-date" style="font-size: 0.85em;">Sept 2023</div>
+                        <div class="timeline-title" style="font-size: 1.0em;">AWS Certified Cloud Practitioner</div>
+                        <div class="timeline-subtitle" style="font-size: 0.85em;">Amazon Web Services</div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">July 2022</div>
-                        <div class="timeline-title">TMAP Quality for Cross-functional Teams</div>
-                        <div class="timeline-subtitle">iSQI Certification</div>
+                    <div class="timeline-item" style="background: linear-gradient(135deg, #fff8f0 0%, #fdf2e8 100%); border-left: 4px solid #f39c12; padding: 20px; margin-bottom: 20px;">
+                        <div class="timeline-date" style="font-size: 0.85em;">July 2022</div>
+                        <div class="timeline-title" style="font-size: 1.0em;">TMAP Quality for Cross-functional Teams</div>
+                        <div class="timeline-subtitle" style="font-size: 0.85em;">iSQI Certification</div>
                     </div>
                 </div>
             </section>
@@ -643,6 +723,7 @@
                 </div>
             </section>
 
+
             <section class="section" id="projects">
                 <h2 class="section-title">Current Project</h2>
                 <div class="grid">
@@ -651,36 +732,29 @@
                             <div class="card-icon">
                                 <i class="fas fa-language"></i>
                             </div>
-                            <h3>French Flashcard Website <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 8px; color: #3498db;"></i></h3>
-                            <p style="color: #666; margin-bottom: 15px;">Curated database for personal language learning with custom spaced repetition algorithms and progress tracking</p>
+                            <h3>French News Aggregation Pipeline <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 8px; color: #3498db;"></i></h3>
+                            <p style="color: #666; margin-bottom: 15px;">Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.</p>
+                            
+                            <!-- TODO: Remember to review and update these tech stack tags -->
+                            <div style="margin: 15px 0;">
+                                <h4 style="font-size: 0.9em; color: #2c3e50; margin-bottom: 8px;">Tech Stack:</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Python 3.x</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">PostgreSQL</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">dbt</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">SQLAlchemy</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Docker</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">BeautifulSoup4</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">pytest</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">ruff</span>
+                                    <span style="background: #e8f4fd; color: #2c3e50; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">mypy</span>
+                                </div>
+                                <p style="font-size: 0.85em; color: #666; font-style: italic;">Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables</p>
+                            </div>
+                            
                             <span style="background: #3498db; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 600; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);">🚀 Active Development</span>
                         </div>
                     </a>
-                </div>
-            </section>
-
-            <section class="section" id="future-projects">
-                <h2 class="section-title">Future Projects</h2>
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <p style="color: #666; font-size: 1.1em; font-style: italic;">Exciting projects coming soon...</p>
-                </div>
-                <div class="grid">
-                    <div class="card" style="opacity: 0.8; background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 100%);">
-                        <div class="card-icon" style="color: #667eea;">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3>Training App</h3>
-                        <p style="color: #666; margin-bottom: 15px;">Comprehensive fitness tracking application with workout planning, progress analytics, and social features</p>
-                        <span style="background: #667eea; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.85em; font-weight: 500;">📅 Coming Soon</span>
-                    </div>
-                    <div class="card" style="opacity: 0.8; background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 100%);">
-                        <div class="card-icon" style="color: #667eea;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Custom Strava Premium</h3>
-                        <p style="color: #666; margin-bottom: 15px;">Advanced personal analytics tools for Strava with custom metrics, detailed performance insights, and goal tracking</p>
-                        <span style="background: #667eea; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.85em; font-weight: 500;">📅 Coming Soon</span>
-                    </div>
                 </div>
             </section>
 
