@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Hugh Matthew - Resume</title>
+    <title>Robert Hugh Matthew - Data Analytics Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -15,964 +15,703 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 50%, #1a1a1a 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            min-height: 100vh;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #ffffff;
             overflow-x: hidden;
-            position: relative;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(86, 156, 214, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(78, 201, 176, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(156, 214, 86, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .main-container {
-            display: grid;
-            grid-template-columns: 380px 1fr;
-            min-height: 100vh;
-            width: 100vw;
-            margin: 0;
-            background: transparent;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Left Sidebar */
-        .sidebar {
-            background: linear-gradient(180deg, #1e1e1e 0%, #252526 100%);
-            color: white;
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-            z-index: 1;
-        }
-
-        .sidebar-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile {
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 80px 0 120px;
             text-align: center;
-            margin-bottom: 40px;
+            border-bottom: 1px solid #f8f9fa;
         }
 
-        .flip-container {
-            perspective: 1000px;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
-        .flipper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: flip 4s infinite linear;
-        }
-
-        .front, .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
+        .profile-image {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .back {
-            transform: rotateY(180deg);
-        }
-
-        .avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.2);
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
+            margin: 0 auto 40px;
+            display: block;
+            border: 4px solid #f8f9fa;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes flip {
-            0% {
-                transform: rotateY(0deg);
-            }
-            50% {
-                transform: rotateY(180deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
+        .profile-image:hover {
+            transform: scale(1.02);
         }
 
-
-        .profile h1 {
-            font-size: 1.8em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: slideInLeft 1s ease 0.6s forwards;
-        }
-
-        .profile .title {
-            font-size: 1.1em;
-            opacity: 0.8;
+        .header h1 {
+            font-size: 3.5rem;
             font-weight: 300;
-            opacity: 0;
-            animation: slideInLeft 1s ease 0.8s forwards;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
-        .about-me-sidebar {
-            opacity: 0;
-            animation: slideInLeft 1s ease 1s forwards;
-        }
-
-
-        .contact-info {
+        .header .subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            font-weight: 300;
             margin-bottom: 40px;
         }
 
-        .contact-item {
+        .header .bio {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #ffffff;
+            border-bottom: 1px solid #ecf0f1;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-list {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            opacity: 0;
-            animation: slideInLeft 1s ease forwards;
-            transition: transform 0.2s ease;
+            justify-content: center;
+            gap: 60px;
+            list-style: none;
         }
 
-        .contact-item:hover {
-            transform: translateX(5px);
-        }
-
-        .contact-item i {
-            width: 20px;
-            margin-right: 15px;
-            color: #569cd6;
-        }
-
-        .contact-item a {
-            color: white;
+        .nav-list a {
+            color: #7f8c8d;
             text-decoration: none;
-            font-size: 0.9em;
-        }
-
-        .sidebar-section {
-            margin-bottom: 35px;
-        }
-
-        .sidebar-section h3 {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            color: #569cd6;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .skill-bar {
-            margin-bottom: 20px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-        }
-
-        .skill-progress {
-            height: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #569cd6, #4ec9b0);
-            border-radius: 3px;
-            width: 0;
-            transition: width 1.5s ease-in-out;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 50px 60px;
-            background: #252526;
-            border: 1px solid #3c3c3c;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-            color: #ffffff;
-        }
-
-        .section {
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #ffffff;
+            transition: color 0.3s ease;
             position: relative;
-            display: inline-block;
         }
 
-        .section-title::after {
+        .nav-list a:hover {
+            color: #3498db;
+        }
+
+        .nav-list a::after {
             content: '';
             position: absolute;
             bottom: -8px;
             left: 0;
             width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #569cd6, #4ec9b0);
-            transition: width 0.8s ease;
+            height: 2px;
+            background: #3498db;
+            transition: width 0.3s ease;
         }
 
-        .section.visible .section-title::after {
-            width: 60px;
+        .nav-list a:hover::after {
+            width: 100%;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+        /* Main Content */
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
         }
 
-        .card {
-            background: #2d2d30;
-            border-radius: 6px;
-            padding: 30px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            border: 1px solid #3c3c3c;
-            transition: all 0.3s ease;
+        .section {
+            margin-bottom: 120px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.02em;
             position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
         }
 
-        .card::before {
+        .section-title::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #569cd6, #4ec9b0);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: #3498db;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border-color: #569cd6;
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: #e3e9ef;
         }
 
         .card-icon {
-            font-size: 2.5em;
-            color: #569cd6;
+            font-size: 2.5rem;
+            color: #3498db;
             margin-bottom: 20px;
         }
 
         .card h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #ffffff;
+            font-size: 1.4rem;
             font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
 
         .card ul {
             list-style: none;
+            margin: 0;
         }
 
         .card li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            color: #5a6c7d;
             position: relative;
             padding-left: 20px;
-            color: #e6e6e6;
         }
 
         .card li::before {
-            content: '▸';
+            content: '•';
             position: absolute;
             left: 0;
-            color: #569cd6;
+            color: #3498db;
             font-weight: bold;
         }
 
-        .timeline {
-            position: relative;
-            padding-left: 0px;
+        /* Contact Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
 
+        .contact-item:hover {
+            background: #ecf0f1;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #3498db;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #3498db;
+        }
+
+        /* Experience Timeline */
         .timeline-item {
+            border-left: 2px solid #ecf0f1;
+            padding: 0 0 40px 40px;
             position: relative;
-            margin-bottom: 30px;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
         }
 
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #3498db;
+            border-radius: 50%;
         }
 
         .timeline-date {
-            font-size: 0.9em;
-            color: #569cd6;
+            font-size: 0.9rem;
+            color: #3498db;
             font-weight: 600;
-            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
         .timeline-title {
-            font-size: 1.2em;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #ffffff;
+            color: #2c3e50;
             margin-bottom: 5px;
         }
 
-        .timeline-subtitle {
-            color: #e6e6e6;
+        .timeline-company {
+            color: #7f8c8d;
             font-style: italic;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .interests-grid-sidebar {
+        .timeline-description {
+            color: #5a6c7d;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skill-tag {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 4px;
+            border: 1px solid #ecf0f1;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        /* Languages & Interests */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .info-item {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ecf0f1;
         }
 
-        .interest-item-sidebar {
-            color: #e6e6e6;
-            padding: 8px 12px;
-            border-radius: 4px;
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .interest-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 0.9em;
+            gap: 12px;
+            padding: 12px 0;
+            color: #5a6c7d;
         }
 
-        .interest-item-sidebar:hover {
-            background: rgba(86, 156, 214, 0.1);
-            color: #ffffff;
-            transform: translateX(5px);
-        }
-
-        .interest-item-sidebar .interest-icon {
-            font-size: 1em;
-            color: #569cd6;
-            width: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .interest-item-sidebar:hover .interest-icon {
-            color: #4ec9b0;
-        }
-
-        .interest-item-sidebar span {
-            margin: 0;
-            font-size: 0.9em;
-            font-weight: 400;
-        }
-
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .interest-item i {
+            color: #3498db;
+            width: 20px;
+            text-align: center;
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .main-container {
-                grid-template-columns: 320px 1fr;
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
             }
-            
-            .main-content {
-                padding: 40px 40px;
-            }
-        }
 
-        @media (max-width: 968px) {
-            .main-container {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-list {
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+            }
+
+            .main {
+                padding: 60px 20px;
+            }
+
+            .section {
+                margin-bottom: 80px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .grid-2,
+            .grid-3 {
                 grid-template-columns: 1fr;
-                max-width: 100%;
             }
-            
-            .sidebar {
-                padding: 30px 20px;
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-            
-            .main-content {
-                padding: 30px 20px;
+
+            .card {
+                padding: 30px;
             }
-            
-            .grid {
+
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Scroll Animation */
-        .parallax-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            z-index: -1;
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
         }
 
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .mb-large {
+            margin-bottom: 60px;
+        }
+
+        /* Project Card Special Styling */
+        .project-card {
+            border: 2px solid #3498db;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(52, 152, 219, 0.1);
+        }
+
+        .tech-stack {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
         }
 
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .tech-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .status-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Loading removed for debugging -->
-
-    <div class="parallax-bg"></div>
-
-    <div class="main-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <div class="front">
-                                <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Matthew" class="avatar">
-                            </div>
-                            <div class="back">
-                                <img src="images/DSF0308_1000_NORMAL.jpg" alt="Robert Matthew Climbing" class="avatar">
-                            </div>
-                        </div>
-                    </div>
-                    <h1>Robert Hugh Matthew</h1>
-                    <p class="title">Data Analytics Engineer</p>
-                    
-                    <div class="about-me-sidebar" style="margin-top: 20px; margin-bottom: 30px;">
-                        <p style="font-size: 0.9em; line-height: 1.6; color: #e6e6e6; margin: 0; text-align: justify;">
-                            I bring a strong quantitative and scientific 
-                            background to every project, building data solutions and pipelines primarily in Python.
-                        </p>
-                    </div>
+    <header class="header">
+        <div class="container">
+            <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Hugh Matthew" class="profile-image">
+            <h1>Robert Hugh Matthew</h1>
+            <p class="subtitle">Data Analytics Engineer</p>
+            <p class="bio">I bring a strong quantitative and scientific background to every project, building data solutions and pipelines primarily in Python.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:rhm14148@gmail.com">rhm14148@gmail.com</a>
                 </div>
-
-                <div class="contact-info">
-                    <div class="contact-item" style="animation-delay: 0.7s">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:rhm14148@gmail.com">rhm14148@gmail.com</a>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 0.8s">
-                        <i class="fas fa-phone"></i>
-                        <span>+44(0) 7494 297312</span>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 0.9s">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>London, UK</span>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 1s">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/rhm14148" target="_blank">linkedin.com/in/rhm14148</a>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 1.1s">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/roba7o" target="_blank">github.com/roba7o</a>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 1.2s">
-                        <i class="fas fa-file-pdf"></i>
-                        <a href="Robert_CV.pdf" target="_blank">Download CV (PDF)</a>
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+44(0) 7494 297312</span>
                 </div>
-
-                <div class="sidebar-section">
-                    <h3>Languages</h3>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; border-left: 3px solid #569cd6;">
-                            <span style="font-size: 0.9em; color: #ffffff;">English</span>
-                            <span style="font-size: 0.85em; color: #4ec9b0; font-weight: 500;">Native</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; border-left: 3px solid #569cd6;">
-                            <span style="font-size: 0.9em; color: #ffffff;">French</span>
-                            <span style="font-size: 0.85em; color: #4ec9b0; font-weight: 500;">B2</span>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>London, UK</span>
                 </div>
-
-                <div class="sidebar-section">
-                    <h3>Interests & Hobbies</h3>
-                    <div class="interests-grid-sidebar">
-                        <div class="interest-item-sidebar" data-interest="climbing">
-                            <i class="fas fa-mountain interest-icon"></i>
-                            <span>Rock Climbing</span>
-                        </div>
-                        <div class="interest-item-sidebar" data-interest="running">
-                            <i class="fas fa-running interest-icon"></i>
-                            <span>Ultramarathons</span>
-                        </div>
-                        <div class="interest-item-sidebar" data-interest="swimming">
-                            <i class="fas fa-swimmer interest-icon"></i>
-                            <span>Swimming</span>
-                        </div>
-                        <div class="interest-item-sidebar" data-interest="cycling">
-                            <i class="fas fa-bicycle interest-icon"></i>
-                            <span>Cycling</span>
-                        </div>
-                        <div class="interest-item-sidebar" data-interest="coding">
-                            <i class="fas fa-code interest-icon"></i>
-                            <span>Coding</span>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/rhm14148" target="_blank">linkedin.com/in/rhm14148</a>
                 </div>
-
-                <div class="sidebar-section">
-                    <h3>Currently Reading</h3>
-                    <ul style="list-style: none; color: rgba(255,255,255,0.8);">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-book" style="margin-right: 10px; color: #569cd6;"></i>Blahhh</li>
-                    </ul>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/roba7o" target="_blank">github.com/roba7o</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <a href="Robert_CV.pdf" target="_blank">Download CV (PDF)</a>
                 </div>
             </div>
-        </aside>
+        </div>
+    </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <section class="section" id="skills">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h3>Python & Data</h3>
-                        <ul>
-                            <li>Python 3.x, Pandas, SQLAlchemy <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <li>PostgreSQL, SQL, Database Management <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Custom ETLs, dbt (Data Build Tool) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Data Analytics, BI Tools (PowerBI, Sigma) <span style="background: #9b59b6; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Exposure</span></li>
-                        </ul>
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section id="skills" class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid grid-2">
+                <article class="card">
+                    <div class="card-icon">
+                        <i class="fab fa-python"></i>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud / Platform</h3>
-                        <ul>
-                            <li>AWS (S3, Redshift) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Snowflake, BigQuery <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
-                            <li>Cloud data warehousing <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Platform analytics <span style="background: #9b59b6; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Exposure</span></li>
-                            <!-- ADD TECH STACK SPECIFIC TAG: Multi-cloud, Data lakes -->
-                        </ul>
+                    <h3>Python & Data</h3>
+                    <ul>
+                        <li>Python 3.x, Pandas, SQLAlchemy</li>
+                        <li>PostgreSQL, SQL, Database Management</li>
+                        <li>Custom ETLs, dbt (Data Build Tool)</li>
+                        <li>Data Analytics, BI Tools (PowerBI, Sigma)</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <h3>Testing & Automation</h3>
-                        <ul>
-                            <li>Selenium (Python & Java) <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <li>pytest, Cucumber BDD <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Git version control, GitLab <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <li>Test automation frameworks <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <!-- ADD TECH STACK SPECIFIC TAG: Testing frameworks, Regression testing -->
-                        </ul>
+                    <h3>Cloud & Platform</h3>
+                    <ul>
+                        <li>AWS (S3, Redshift)</li>
+                        <li>Snowflake, BigQuery</li>
+                        <li>Cloud data warehousing</li>
+                        <li>Platform analytics</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-vial"></i>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>DevOps & Pipelines</h3>
-                        <ul>
-                            <li>Docker & Docker Compose <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>CI/CD (GitHub Actions, GitLab, Jenkins) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Bash Scripting, Make automation <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <li>Pipeline orchestration <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
-                            <!-- ADD TECH STACK SPECIFIC TAG: Container orchestration, Kubernetes -->
-                        </ul>
+                    <h3>Testing & Automation</h3>
+                    <ul>
+                        <li>Selenium (Python & Java)</li>
+                        <li>pytest, Cucumber BDD</li>
+                        <li>Git version control, GitLab</li>
+                        <li>Test automation frameworks</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <ul>
-                            <li>Django framework <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>HTML, JavaScript <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>API development <span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Learning</span></li>
-                            <!-- ADD TECH STACK SPECIFIC TAG: Frontend frameworks, REST APIs -->
-                        </ul>
+                    <h3>DevOps & Pipelines</h3>
+                    <ul>
+                        <li>Docker & Docker Compose</li>
+                        <li>CI/CD (GitHub Actions, GitLab, Jenkins)</li>
+                        <li>Bash Scripting, Make automation</li>
+                        <li>Pipeline orchestration</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <article class="timeline-item">
+                <div class="timeline-date">Nov 2024 - Present</div>
+                <div class="timeline-title">Data Analytics Engineer</div>
+                <div class="timeline-company">[Company Name] • [Location]</div>
+                <div class="timeline-description">
+                    • [Add key achievement or responsibility here]<br>
+                    • [Add another achievement or responsibility]<br>
+                    • [Add technologies/tools used]
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">May 2022 - Nov 2024</div>
+                <div class="timeline-title">Engineer / Junior Engineer</div>
+                <div class="timeline-company">2i • London, UK</div>
+                <div class="timeline-description">
+                    • [Add key achievements from engineer role]<br>
+                    • [Add specific projects or improvements]<br>
+                    • [Add technologies/frameworks used]
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">Sept 2021 - March 2022</div>
+                <div class="timeline-title">Technical Application Specialist</div>
+                <div class="timeline-company">Cellexus International • Dundee, UK</div>
+                <div class="timeline-description">
+                    • [Add key responsibilities or achievements]<br>
+                    • [Add specific projects or improvements]<br>
+                    • [Add technical skills used]
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">Jan 2019 - Apr 2019</div>
+                <div class="timeline-title">Traineeship Student</div>
+                <div class="timeline-company">Jerzy Haber Institute of Catalysis and Surface Chemistry, Polish Academy of Sciences • Krakow, Poland</div>
+                <div class="timeline-description">
+                    • Erasmus traineeship exchange at the Instytut Katalizy i Fizykochemii Powierzchni Polskiej Akademii Nauk (IKiFP PAN)<br>
+                    • Gained international research experience in catalysis and surface chemistry<br>
+                    • Collaborated with Polish research teams on scientific projects
+                </div>
+            </article>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <article class="timeline-item">
+                <div class="timeline-date">Nov 2021</div>
+                <div class="timeline-title">MSc Industrial Biotechnology</div>
+                <div class="timeline-company">University of Strathclyde • IBioIC Programme</div>
+                <div class="timeline-description">
+                    • Advanced study in industrial biotechnology and bioprocessing<br>
+                    • Focus on sustainable manufacturing and green chemistry<br>
+                    • Research project in catalysis and enzyme technology
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">June 2019</div>
+                <div class="timeline-title">MEng Chemical Engineering</div>
+                <div class="timeline-company">University of Strathclyde • iChemE Accredited</div>
+                <div class="timeline-description">
+                    • Comprehensive engineering degree covering process design and optimization<br>
+                    • Strong foundation in mathematics, chemistry, and engineering principles<br>
+                    • Final year project in chemical process simulation
+                </div>
+            </article>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Current Project</h2>
+            <article class="card project-card">
+                <div class="card-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3>French News Aggregation Pipeline <a href="https://github.com/roba7o/publicite_francais" target="_blank" style="color: #3498db; font-size: 0.8em;"><i class="fas fa-external-link-alt"></i></a></h3>
+                <p style="color: #5a6c7d; margin-bottom: 15px; line-height: 1.7;">
+                    Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.
+                </p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Python 3.x</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">dbt</span>
+                    <span class="tech-tag">SQLAlchemy</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">BeautifulSoup4</span>
+                    <span class="tech-tag">pytest</span>
+                    <span class="tech-tag">ruff</span>
+                    <span class="tech-tag">mypy</span>
+                </div>
+                
+                <p style="font-size: 0.9rem; color: #7f8c8d; font-style: italic; margin-bottom: 20px;">
+                    Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables
+                </p>
+                
+                <span class="status-badge">🚀 Active Development</span>
+            </article>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="info-grid">
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Languages</h3>
+                    <div class="info-item">
+                        <span>English</span>
+                        <span style="color: #3498db; font-weight: 600;">Native</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Data Tools</h3>
-                        <ul>
-                            <li>BeautifulSoup4, requests (Web Scraping) <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <li>ruff, mypy (Code Quality) <span style="background: #3498db; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Proficient</span></li>
-                            <li>Data extraction & processing <span style="background: #2ecc71; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; font-weight: 500; margin-left: 8px;">Expert</span></li>
-                            <!-- ADD TECH STACK SPECIFIC TAG: Data validation, ETL tools -->
-                        </ul>
+                    <div class="info-item">
+                        <span>French</span>
+                        <span style="color: #3498db; font-weight: 600;">B2</span>
                     </div>
                 </div>
-            </section>
-
-            <section class="section" id="education">
-                <h2 class="section-title">Education</h2>
-                <div class="grid" style="grid-template-columns: 1fr; gap: 25px;">
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">University of Strathclyde</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Nov 2021</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">MSc Industrial Biotechnology</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">IBioIC Programme</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Advanced study in industrial biotechnology and bioprocessing<br>• Focus on sustainable manufacturing and green chemistry<br>• Research project in catalysis and enzyme technology</p>
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Interests</h3>
+                    <div class="interest-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Rock Climbing</span>
                     </div>
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">University of Strathclyde</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">June 2019</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">MEng Chemical Engineering</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">iChemE Accredited</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Comprehensive engineering degree covering process design and optimization<br>• Strong foundation in mathematics, chemistry, and engineering principles<br>• Final year project in chemical process simulation</p>
+                    <div class="interest-item">
+                        <i class="fas fa-running"></i>
+                        <span>Ultramarathons</span>
                     </div>
-                </div>
-            </section>
-
-            <section class="section" id="experience">
-                <h2 class="section-title">Work Experience</h2>
-                <div class="grid" style="grid-template-columns: 1fr; gap: 25px;">
-                    
-                    <!-- Current Company -->
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">[COMPANY NAME]</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Nov 2024 - Present</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Data Analytics Engineer</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">[LOCATION]</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENT OR RESPONSIBILITY HERE]<br>• [ADD ANOTHER ACHIEVEMENT OR RESPONSIBILITY]<br>• [ADD TECHNOLOGIES/TOOLS USED]</p>
+                    <div class="interest-item">
+                        <i class="fas fa-swimmer"></i>
+                        <span>Swimming</span>
                     </div>
-
-                    <!-- 2i Company -->
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">2i</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">May 2022 - Nov 2024</span>
-                        </div>
-                        
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Engineer / Junior Engineer</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">London, UK</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY ACHIEVEMENTS FROM ENGINEER ROLE]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNOLOGIES/FRAMEWORKS USED]</p>
+                    <div class="interest-item">
+                        <i class="fas fa-language"></i>
+                        <span>Language Learning</span>
                     </div>
-
-                    <!-- Cellexus Company -->
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Cellexus International</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Sept 2021 - March 2022</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Technical Application Specialist</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Dundee, UK</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD KEY RESPONSIBILITIES OR ACHIEVEMENTS]<br>• [ADD SPECIFIC PROJECTS OR IMPROVEMENTS]<br>• [ADD TECHNICAL SKILLS USED]</p>
+                    <div class="interest-item">
+                        <i class="fas fa-code"></i>
+                        <span>Coding</span>
                     </div>
-
-                    <!-- BioSep Company -->
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">BioSep</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">June 2021 - Sept 2021</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">[INTERNSHIP TITLE]</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Remote, UK</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• [ADD MAIN PROJECTS OR RESPONSIBILITIES]<br>• [ADD SKILLS LEARNED OR DEVELOPED]<br>• [ADD ANY NOTABLE ACHIEVEMENTS]</p>
-                    </div>
-
-                    <!-- Polish Academy Traineeship -->
-                    <div class="card" style="background: #2d2d30; border-left: 4px solid #569cd6;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="color: #ffffff; margin: 0; font-size: 1.2em;">Jerzy Haber Institute of Catalysis and Surface Chemistry, Polish Academy of Sciences</h3>
-                            <span style="color: #569cd6; font-weight: 600; font-size: 0.9em;">Jan 2019 - Apr 2019</span>
-                        </div>
-                        <div class="timeline-title" style="font-size: 1.1em; color: #ffffff; margin-bottom: 10px;">Traineeship Student</div>
-                        <div style="color: #4ec9b0; font-size: 0.85em; margin-bottom: 10px; font-style: italic;">Krakow, Poland</div>
-                        <p style="color: #e6e6e6; font-size: 0.9em; line-height: 1.5; margin: 0;">• Erasmus traineeship exchange at the Instytut Katalizy i Fizykochemii Powierzchni Polskiej Akademii Nauk (IKiFP PAN)<br>• Gained international research experience in catalysis and surface chemistry<br>• Collaborated with Polish research teams on scientific projects</p>
+                    <div class="interest-item">
+                        <i class="fas fa-book"></i>
+                        <span>Reading</span>
                     </div>
                 </div>
-            </section>
-
-            <section class="section" id="certifications">
-                <h2 class="section-title">Certifications</h2>
-                <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h3>AWS Certified Cloud Practitioner</h3>
-                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">Amazon Web Services</p>
-                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">Sept 2023</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>TMAP Quality for Cross-functional Teams</h3>
-                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">iSQI Certification</p>
-                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">July 2022</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3>Selenium Webdriver; Cypress; Rest API</h3>
-                        <p style="color: #e6e6e6; font-size: 0.9em; margin: 10px 0;">Edgewords</p>
-                        <span style="color: #569cd6; font-size: 0.85em; font-weight: 600;">July 2022</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="soft-skills">
-                <h2 class="section-title">Professional Skills</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Team Leadership</h3>
-                        <ul>
-                            <li>Coordinated cross-functional teams</li>
-                            <li>Managed stakeholder expectations effectively</li>
-                            <li>Agile project delivery</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <h3>Project Management</h3>
-                        <ul>
-                            <li>Delivered projects in Agile sprints</li>
-                            <li>Ensured timely delivery and quality outcomes</li>
-                            <li>JIRA and Confluence workflow optimization</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="section" id="projects">
-                <h2 class="section-title">Current Project</h2>
-                <div class="grid">
-                    <a href="https://github.com/roba7o/publicite_francais" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="border: 2px solid #569cd6; background: #2d2d30; cursor: pointer; transition: all 0.3s ease;">
-                            <div class="card-icon">
-                                <i class="fas fa-language"></i>
-                            </div>
-                            <h3>French News Aggregation Pipeline <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 8px; color: #569cd6;"></i></h3>
-                            <p style="color: #e6e6e6; margin-bottom: 15px;">Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.</p>
-                            
-                            <!-- TODO: Remember to review and update these tech stack tags -->
-                            <div style="margin: 15px 0;">
-                                <h4 style="font-size: 0.9em; color: #ffffff; margin-bottom: 8px;">Tech Stack:</h4>
-                                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Python 3.x</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">PostgreSQL</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">dbt</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">SQLAlchemy</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">Docker</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">BeautifulSoup4</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">pytest</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">ruff</span>
-                                    <span style="background: #3c3c3c; color: #ffffff; padding: 3px 8px; border-radius: 12px; font-size: 0.8em;">mypy</span>
-                                </div>
-                                <p style="font-size: 0.85em; color: #e6e6e6; font-style: italic;">Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables</p>
-                            </div>
-                            
-                            <span style="background: #2d2d30; color: #4ec9b0; padding: 6px 16px; border-radius: 6px; font-size: 0.9em; font-weight: 600; border: 1px solid #4ec9b0;">🚀 Active Development</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-        </main>
-    </div>
+            </div>
+        </section>
+    </main>
 
     <script>
-        // Loading screen removed for debugging
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Animate skill bars when they come into view
-                    if (entry.target.classList.contains('sidebar')) {
-                        animateSkillBars();
-                    }
-                    
-                    // Staggered card animations
-                    if (entry.target.classList.contains('section')) {
-                        const cards = entry.target.querySelectorAll('.card');
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.style.transform = 'translateY(0) scale(1)';
-                                card.style.opacity = '1';
-                            }, index * 150);
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Observe sidebar for skill bar animation
-        observer.observe(document.querySelector('.sidebar'));
-
-        // Animate skill bars
-        function animateSkillBars() {
-            setTimeout(() => {
-                document.querySelectorAll('.skill-fill').forEach(bar => {
-                    const width = bar.getAttribute('data-width');
-                    bar.style.width = width + '%';
-                });
-            }, 500);
-        }
-
-        // Stage 1: Staggered entrance animation
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Page loaded successfully');
-            const interestItems = document.querySelectorAll('.interest-item-sidebar');
-            console.log('Found', interestItems.length, 'interest items');
-            
-            // Add staggered entrance animation
-            interestItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(-20px)';
-                
-                setTimeout(() => {
-                    item.style.transition = 'all 0.6s ease';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateX(0)';
-                }, index * 150);
-            });
-        });
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.parallax-bg');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-
-        // Avatar animation - removed since we have coin flip now
-
-
-        // Smooth scrolling for navigation (if added later)
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -986,263 +725,39 @@
             });
         });
 
-        // Adaptive subtle 3D tilt effect for cards
-        document.addEventListener('mousemove', (e) => {
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    // Adjust tilt intensity based on card width - wider cards get less tilt
-                    const widthFactor = Math.max(50, rect.width / 8); // Minimum 50, scales with width
-                    
-                    const rotateX = (y - centerY) / widthFactor;
-                    const rotateY = (centerX - x) / widthFactor;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(2px)`;
-                    card.style.boxShadow = `0 6px 16px rgba(86, 156, 214, 0.15)`;
-                } else {
-                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-                    card.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
-                }
-            });
-        });
-
-        // Add card click effect
+        // Subtle card hover effects
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'perspective(1000px) scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = 'perspective(1000px) scale(1)';
-                }, 150);
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#d5dbdb';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#ecf0f1';
             });
         });
 
-        // Typing effect for title
-        function typeWriter(element, text, speed = 100) {
-            element.innerHTML = '';
-            let i = 0;
-            const timer = setInterval(() => {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                } else {
-                    element.innerHTML += '<span class="typing-cursor">&nbsp;</span>';
-                    clearInterval(timer);
+        // Intersection Observer for subtle animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
-            }, speed);
-        }
-
-        // Name and title now animate via CSS only
-
-        // Add particles effect (subtle)
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 4px;
-                height: 4px;
-                background: rgba(52, 152, 219, 0.6);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 1;
-                animation: floatUp 4s linear infinite;
-            `;
-            
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 4000);
-        }
-
-        // Add CSS for particle animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes floatUp {
-                to {
-                    transform: translateY(-100vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Create particles occasionally
-        setInterval(createParticle, 3000);
-
-
-        // Matrix rain effect
-        function createMatrixRain() {
-            const canvas = document.createElement('canvas');
-            canvas.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: 1;
-                opacity: 0.1;
-            `;
-            document.body.appendChild(canvas);
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const chars = '01';
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = [];
-            
-            for (let i = 0; i < columns; i++) {
-                drops[i] = 1;
-            }
-            
-            function draw() {
-                ctx.fillStyle = 'rgba(46, 46, 46, 0.04)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                ctx.fillStyle = '#569cd6';
-                ctx.font = fontSize + 'px monospace';
-                
-                for (let i = 0; i < drops.length; i++) {
-                    const text = chars[Math.floor(Math.random() * chars.length)];
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    
-                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                    drops[i]++;
-                }
-            }
-            
-            setInterval(draw, 100);
-            
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
             });
-        }
-        
-        
-        
-        // Brownian Motion Particle System
-        function createBrownianMotion() {
-            const canvas = document.createElement('canvas');
-            canvas.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: 1;
-                opacity: 0.4;
-            `;
-            document.body.appendChild(canvas);
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const particles = [];
-            const numParticles = 120;
-            
-            // Particle class with Brownian motion
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.5;
-                    this.vy = (Math.random() - 0.5) * 0.5;
-                    this.size = Math.random() * 3 + 1;
-                    this.color = this.getRandomColor();
-                    this.opacity = Math.random() * 0.6 + 0.3;
-                }
-                
-                getRandomColor() {
-                    const colors = ['86, 156, 214', '78, 201, 176', '156, 214, 86'];
-                    return colors[Math.floor(Math.random() * colors.length)];
-                }
-                
-                update() {
-                    // Brownian motion - random walk with slight drift
-                    this.vx += (Math.random() - 0.5) * 0.1;
-                    this.vy += (Math.random() - 0.5) * 0.1;
-                    
-                    // Damping to prevent particles from moving too fast
-                    this.vx *= 0.98;
-                    this.vy *= 0.98;
-                    
-                    // Update position
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    
-                    // Wrap around screen edges
-                    if (this.x < 0) this.x = canvas.width;
-                    if (this.x > canvas.width) this.x = 0;
-                    if (this.y < 0) this.y = canvas.height;
-                    if (this.y > canvas.height) this.y = 0;
-                }
-                
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = this.opacity;
-                    ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
-            
-            // Create particles
-            for (let i = 0; i < numParticles; i++) {
-                particles.push(new Particle());
-            }
-            
-            // Animation loop
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        }
-        
-        
-        // Start Brownian motion with more particles
-        createBrownianMotion();
+        }, observerOptions);
 
-        // Initialize timeline animations with delays
-        setTimeout(() => {
-            document.querySelectorAll('.timeline-item').forEach((item, index) => {
-                item.style.animationDelay = (index * 0.2) + 's';
-                item.style.animation = 'slideInLeft 0.6s ease forwards';
-            });
-        }, 1500);
+        // Observe sections for fade-in effect
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
