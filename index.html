@@ -16,33 +16,41 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
-            color: #2c3e50;
+            color: #000000;
             background: #ffffff;
             overflow-x: hidden;
         }
 
         /* Header */
         .header {
-            background: #ffffff;
-            padding: 80px 0 120px;
+            background: #000000;
+            padding: 60px;
             text-align: center;
-            border-bottom: 1px solid #f8f9fa;
+            border-bottom: none;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-padded {
+            padding: 0 60px;
         }
 
         .profile-image {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
+            border-radius: 8px;
             object-fit: cover;
             margin: 0 auto 40px;
             display: block;
-            border: 4px solid #f8f9fa;
+            border: 4px solid #ffffff;
             transition: transform 0.3s ease;
         }
 
@@ -52,22 +60,22 @@
 
         .header h1 {
             font-size: 3.5rem;
-            font-weight: 300;
-            color: #2c3e50;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 20px;
             letter-spacing: -0.02em;
         }
 
         .header .subtitle {
             font-size: 1.5rem;
-            color: #7f8c8d;
-            font-weight: 300;
+            color: #cccccc;
+            font-weight: 400;
             margin-bottom: 40px;
         }
 
         .header .bio {
             font-size: 1.1rem;
-            color: #5a6c7d;
+            color: #ffffff;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.8;
@@ -75,45 +83,65 @@
 
         /* Navigation */
         .nav {
-            background: #ffffff;
-            border-bottom: 1px solid #ecf0f1;
-            padding: 20px 0;
+            background: #000000;
+            padding: 25px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
         }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-profile-container {
+            display: flex;
+            gap: 0;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .nav-profile {
+            width: 46px;
+            height: 46px;
+            object-fit: cover;
+        }
+        
 
         .nav-list {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 80px;
             list-style: none;
+            flex: 1;
         }
 
         .nav-list a {
-            color: #7f8c8d;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            font-size: 1rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-list a:hover {
-            color: #3498db;
+            color: #c9a227;
         }
 
         .nav-list a::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
             width: 0;
             height: 2px;
-            background: #3498db;
+            background: #c9a227;
             transition: width 0.3s ease;
         }
 
@@ -123,20 +151,22 @@
 
         /* Main Content */
         .main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 40px;
+            max-width: none;
+            margin: 0;
+            padding: 0;
         }
 
         .section {
-            margin-bottom: 120px;
+            margin-bottom: 0;
+            padding: 60px;
         }
 
+
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #2c3e50;
-            margin-bottom: 60px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 40px;
             text-align: center;
             letter-spacing: -0.02em;
             position: relative;
@@ -150,17 +180,17 @@
             transform: translateX(-50%);
             width: 60px;
             height: 2px;
-            background: #3498db;
+            background: #000000;
         }
 
         /* Grid Layout */
         .grid {
             display: grid;
-            gap: 40px;
+            gap: 20px;
         }
 
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         }
 
         .grid-3 {
@@ -170,29 +200,30 @@
         /* Cards */
         .card {
             background: #ffffff;
-            border: 1px solid #ecf0f1;
-            border-radius: 8px;
-            padding: 40px;
+            color: #000000;
+            border: 1px solid #000000;
+            border-radius: 0;
+            padding: 30px;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            border-color: #e3e9ef;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #000000;
         }
 
         .card-icon {
             font-size: 2.5rem;
-            color: #3498db;
+            color: #cccccc;
             margin-bottom: 20px;
         }
 
         .card h3 {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -203,7 +234,7 @@
 
         .card li {
             margin-bottom: 12px;
-            color: #5a6c7d;
+            color: #000000;
             position: relative;
             padding-left: 20px;
         }
@@ -212,7 +243,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: #000000;
             font-weight: bold;
         }
 
@@ -220,7 +251,7 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 20px;
             margin-top: 40px;
         }
 
@@ -228,36 +259,39 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            padding: 30px;
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            border-radius: 0;
             transition: background 0.3s ease;
         }
 
         .contact-item:hover {
-            background: #ecf0f1;
+            background: #f5f5f5;
         }
 
         .contact-item i {
             font-size: 1.2rem;
-            color: #3498db;
+            color: #000000;
             width: 20px;
             text-align: center;
         }
 
         .contact-item a {
-            color: #2c3e50;
+            color: #000000;
             text-decoration: none;
             font-weight: 500;
         }
 
         .contact-item a:hover {
-            color: #3498db;
+            color: #000000;
+            text-decoration: underline;
         }
 
         /* Experience Timeline */
         .timeline-item {
-            border-left: 2px solid #ecf0f1;
+            border-left: 2px solid #555555;
             padding: 0 0 40px 40px;
             position: relative;
         }
@@ -269,13 +303,13 @@
             top: 0;
             width: 16px;
             height: 16px;
-            background: #3498db;
-            border-radius: 50%;
+            background: #c9a227;
+            border-radius: 2px;
         }
 
         .timeline-date {
             font-size: 0.9rem;
-            color: #3498db;
+            color: #666666;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -285,38 +319,38 @@
         .timeline-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: #ffffff;
             margin-bottom: 5px;
         }
 
         .timeline-company {
-            color: #7f8c8d;
+            color: #666666;
             font-style: italic;
             margin-bottom: 15px;
         }
 
         .timeline-description {
-            color: #5a6c7d;
+            color: #e5e5e5;
             line-height: 1.7;
         }
 
         /* Skills */
         .skill-tag {
             display: inline-block;
-            background: #f8f9fa;
-            color: #2c3e50;
+            background: #444444;
+            color: #e5e5e5;
             padding: 8px 16px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.9rem;
             margin: 4px;
-            border: 1px solid #ecf0f1;
+            border: 1px solid #555555;
             transition: all 0.3s ease;
         }
 
         .skill-tag:hover {
-            background: #3498db;
-            color: white;
-            border-color: #3498db;
+            background: #c9a227;
+            color: #000000;
+            border-color: #c9a227;
         }
 
         /* Languages & Interests */
@@ -332,7 +366,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         .info-item:last-child {
@@ -344,19 +378,19 @@
             align-items: center;
             gap: 12px;
             padding: 12px 0;
-            color: #5a6c7d;
+            color: #e5e5e5;
         }
 
         .interest-item i {
-            color: #3498db;
+            color: #cccccc;
             width: 20px;
             text-align: center;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
+            .section {
+                padding: 40px 20px;
             }
 
             .header h1 {
@@ -373,13 +407,6 @@
                 justify-content: center;
             }
 
-            .main {
-                padding: 60px 20px;
-            }
-
-            .section {
-                margin-bottom: 80px;
-            }
 
             .section-title {
                 font-size: 2rem;
@@ -414,301 +441,412 @@
             margin-bottom: 60px;
         }
 
-        /* Project Card Special Styling */
-        .project-card {
-            border: 2px solid #3498db;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(52, 152, 219, 0.1);
-        }
-
-        .tech-stack {
+        /* Timeline Layout */
+        .timeline-grid {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .tech-tag {
-            background: #ecf0f1;
-            color: #2c3e50;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
+        .timeline-card {
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            border-radius: 0;
+            padding: 30px;
+            transition: all 0.3s ease;
         }
 
-        .status-badge {
-            display: inline-block;
-            background: #27ae60;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .timeline-card:hover {
+            background: #f5f5f5;
+        }
+
+        .timeline-card h3 {
+            color: #000000;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-top: 20px;
+            margin: 5px 0 10px 0;
+        }
+
+        .timeline-card p {
+            color: #000000;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .interest-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .interest-list span {
+            color: #000000;
+            padding: 5px 0;
+        }
+
+        /* Simple Layout Styles */
+        .simple-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .skill-category,
+        .experience-item,
+        .project-item,
+        .about-category {
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 30px;
+        }
+
+        .skill-category:last-child,
+        .experience-item:last-child,
+        .project-item:last-child,
+        .about-category:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .skill-category h3,
+        .experience-item h3,
+        .project-item h3,
+        .about-category h3 {
+            color: #000000;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .skill-category p,
+        .experience-item .description,
+        .project-item .description,
+        .about-category p {
+            color: #000000;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            color: #666666;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .company {
+            color: #666666;
+            font-size: 0.95rem;
+            margin: 5px 0 10px 0;
+            font-style: italic;
+        }
+
+        .project-item h3 a {
+            color: #666666;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .project-item h3 a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .tech-list {
+            color: #666666 !important;
+            font-size: 0.9rem !important;
+            margin-top: 10px !important;
+        }
+
+        .status {
+            color: #000000 !important;
+            font-weight: 600 !important;
+            margin-top: 10px !important;
+        }
+
+        .contact-simple {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-simple p {
+            color: #000000;
+            margin: 0;
+        }
+
+        .contact-simple strong {
+            color: #000000;
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .contact-simple a {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        .contact-simple a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container-padded {
+                padding: 0 20px;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .footer p {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin: 0;
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="container container-padded">
+            <div class="nav-container">
+                <div class="nav-profile-container">
+                    <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Hugh Matthew" class="nav-profile nav-profile-left">
+                    <img src="images/DSF0308_1000_NORMAL.jpg" alt="Robert Hugh Matthew" class="nav-profile nav-profile-right">
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div style="width: 92px;"></div> <!-- Spacer for centering -->
+            </div>
+        </div>
+    </nav>
+
     <header class="header">
-        <div class="container">
-            <img src="images/DSF0308_1000_GHIBLI copy.png" alt="Robert Hugh Matthew" class="profile-image">
+        <div class="container container-padded">
             <h1>Robert Hugh Matthew</h1>
-            <p class="subtitle">Data Analytics Engineer</p>
+            <p class="subtitle">Data Analytics Engineer • London, UK</p>
             <p class="bio">I bring a strong quantitative and scientific background to every project, building data solutions and pipelines primarily in Python.</p>
-            
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:rhm14148@gmail.com">rhm14148@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+44(0) 7494 297312</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>London, UK</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/rhm14148" target="_blank">linkedin.com/in/rhm14148</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/roba7o" target="_blank">github.com/roba7o</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-file-pdf"></i>
-                    <a href="Robert_CV.pdf" target="_blank">Download CV (PDF)</a>
-                </div>
+            <div style="margin-top: 30px;">
+                <a href="Robert_CV.pdf" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; border: 1px solid #ffffff; padding: 12px 24px; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff'">
+                    <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>Download CV
+                </a>
             </div>
         </div>
     </header>
 
-    <nav class="nav">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <main class="main">
         <section id="skills" class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="grid grid-2">
-                <article class="card">
-                    <div class="card-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python & Data</h3>
-                    <ul>
-                        <li>Python 3.x, Pandas, SQLAlchemy</li>
-                        <li>PostgreSQL, SQL, Database Management</li>
-                        <li>Custom ETLs, dbt (Data Build Tool)</li>
-                        <li>Data Analytics, BI Tools (PowerBI, Sigma)</li>
-                    </ul>
-                </article>
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="grid grid-2">
+                    <article class="card">
+                        <h3><i class="fab fa-python" style="margin-right: 10px; color: #666666;"></i>Python & Data</h3>
+                        <ul>
+                            <li>Python 3.x, Pandas, SQLAlchemy</li>
+                            <li>PostgreSQL, SQL, Database Management</li>
+                            <li>Custom ETLs, dbt (Data Build Tool)</li>
+                            <li>Data Analytics, BI Tools (PowerBI, Sigma)</li>
+                        </ul>
+                    </article>
 
-                <article class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud & Platform</h3>
-                    <ul>
-                        <li>AWS (S3, Redshift)</li>
-                        <li>Snowflake, BigQuery</li>
-                        <li>Cloud data warehousing</li>
-                        <li>Platform analytics</li>
-                    </ul>
-                </article>
+                    <article class="card">
+                        <h3><i class="fas fa-cloud" style="margin-right: 10px; color: #666666;"></i>Cloud & Platform</h3>
+                        <ul>
+                            <li>AWS (S3, Redshift)</li>
+                            <li>Snowflake, BigQuery</li>
+                            <li>Cloud data warehousing</li>
+                            <li>Platform analytics</li>
+                        </ul>
+                    </article>
 
-                <article class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-vial"></i>
-                    </div>
-                    <h3>Testing & Automation</h3>
-                    <ul>
-                        <li>Selenium (Python & Java)</li>
-                        <li>pytest, Cucumber BDD</li>
-                        <li>Git version control, GitLab</li>
-                        <li>Test automation frameworks</li>
-                    </ul>
-                </article>
+                    <article class="card">
+                        <h3><i class="fas fa-vial" style="margin-right: 10px; color: #666666;"></i>Testing & Automation</h3>
+                        <ul>
+                            <li>Selenium (Python & Java)</li>
+                            <li>pytest, Cucumber BDD</li>
+                            <li>Git version control, GitLab</li>
+                            <li>Test automation frameworks</li>
+                        </ul>
+                    </article>
 
-                <article class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>DevOps & Pipelines</h3>
-                    <ul>
-                        <li>Docker & Docker Compose</li>
-                        <li>CI/CD (GitHub Actions, GitLab, Jenkins)</li>
-                        <li>Bash Scripting, Make automation</li>
-                        <li>Pipeline orchestration</li>
-                    </ul>
-                </article>
+                    <article class="card">
+                        <h3><i class="fas fa-rocket" style="margin-right: 10px; color: #666666;"></i>DevOps & Pipelines</h3>
+                        <ul>
+                            <li>Docker & Docker Compose</li>
+                            <li>CI/CD (GitHub Actions, GitLab, Jenkins)</li>
+                            <li>Bash Scripting, Make automation</li>
+                            <li>Pipeline orchestration</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
         </section>
 
         <section id="experience" class="section">
-            <h2 class="section-title">Work Experience</h2>
-            
-            <article class="timeline-item">
-                <div class="timeline-date">Nov 2024 - Present</div>
-                <div class="timeline-title">Data Analytics Engineer</div>
-                <div class="timeline-company">[Company Name] • [Location]</div>
-                <div class="timeline-description">
-                    • [Add key achievement or responsibility here]<br>
-                    • [Add another achievement or responsibility]<br>
-                    • [Add technologies/tools used]
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <div class="timeline-date">Nov 2024 - Present</div>
+                        <h3>Data Analytics Engineer</h3>
+                        <div class="timeline-company">[Company Name] • [Location]</div>
+                        <p>[Add key achievement or responsibility here] • [Add another achievement or responsibility] • [Add technologies/tools used]</p>
+                    </article>
+                    
+                    <article class="timeline-card">
+                        <div class="timeline-date">May 2022 - Nov 2024</div>
+                        <h3>Engineer / Junior Engineer</h3>
+                        <div class="timeline-company">2i • London, UK</div>
+                        <p>[Add key achievements from engineer role] • [Add specific projects or improvements] • [Add technologies/frameworks used]</p>
+                    </article>
+                    
+                    <article class="timeline-card">
+                        <div class="timeline-date">Sept 2021 - March 2022</div>
+                        <h3>Technical Application Specialist</h3>
+                        <div class="timeline-company">Cellexus International • Dundee, UK</div>
+                        <p>[Add key responsibilities or achievements] • [Add specific projects or improvements] • [Add technical skills used]</p>
+                    </article>
+                    
+                    <article class="timeline-card">
+                        <div class="timeline-date">Jan 2019 - Apr 2019</div>
+                        <h3>Traineeship Student</h3>
+                        <div class="timeline-company">Jerzy Haber Institute of Catalysis and Surface Chemistry, Polish Academy of Sciences • Krakow, Poland</div>
+                        <p>Erasmus traineeship exchange • Gained international research experience in catalysis and surface chemistry • Collaborated with Polish research teams on scientific projects</p>
+                    </article>
                 </div>
-            </article>
-
-            <article class="timeline-item">
-                <div class="timeline-date">May 2022 - Nov 2024</div>
-                <div class="timeline-title">Engineer / Junior Engineer</div>
-                <div class="timeline-company">2i • London, UK</div>
-                <div class="timeline-description">
-                    • [Add key achievements from engineer role]<br>
-                    • [Add specific projects or improvements]<br>
-                    • [Add technologies/frameworks used]
-                </div>
-            </article>
-
-            <article class="timeline-item">
-                <div class="timeline-date">Sept 2021 - March 2022</div>
-                <div class="timeline-title">Technical Application Specialist</div>
-                <div class="timeline-company">Cellexus International • Dundee, UK</div>
-                <div class="timeline-description">
-                    • [Add key responsibilities or achievements]<br>
-                    • [Add specific projects or improvements]<br>
-                    • [Add technical skills used]
-                </div>
-            </article>
-
-            <article class="timeline-item">
-                <div class="timeline-date">Jan 2019 - Apr 2019</div>
-                <div class="timeline-title">Traineeship Student</div>
-                <div class="timeline-company">Jerzy Haber Institute of Catalysis and Surface Chemistry, Polish Academy of Sciences • Krakow, Poland</div>
-                <div class="timeline-description">
-                    • Erasmus traineeship exchange at the Instytut Katalizy i Fizykochemii Powierzchni Polskiej Akademii Nauk (IKiFP PAN)<br>
-                    • Gained international research experience in catalysis and surface chemistry<br>
-                    • Collaborated with Polish research teams on scientific projects
-                </div>
-            </article>
+            </div>
         </section>
 
         <section id="education" class="section">
-            <h2 class="section-title">Education</h2>
-            
-            <article class="timeline-item">
-                <div class="timeline-date">Nov 2021</div>
-                <div class="timeline-title">MSc Industrial Biotechnology</div>
-                <div class="timeline-company">University of Strathclyde • IBioIC Programme</div>
-                <div class="timeline-description">
-                    • Advanced study in industrial biotechnology and bioprocessing<br>
-                    • Focus on sustainable manufacturing and green chemistry<br>
-                    • Research project in catalysis and enzyme technology
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <div class="timeline-date">Nov 2021</div>
+                        <h3>MSc Industrial Biotechnology</h3>
+                        <div class="timeline-company">University of Strathclyde • IBioIC Programme</div>
+                        <p>[MODULES TAKEN]</p>
+                    </article>
+                    
+                    <article class="timeline-card">
+                        <div class="timeline-date">June 2019</div>
+                        <h3>MEng Chemical Engineering</h3>
+                        <div class="timeline-company">University of Strathclyde • iChemE Accredited</div>
+                        <p>[MODULES TAKEN]</p>
+                    </article>
                 </div>
-            </article>
-
-            <article class="timeline-item">
-                <div class="timeline-date">June 2019</div>
-                <div class="timeline-title">MEng Chemical Engineering</div>
-                <div class="timeline-company">University of Strathclyde • iChemE Accredited</div>
-                <div class="timeline-description">
-                    • Comprehensive engineering degree covering process design and optimization<br>
-                    • Strong foundation in mathematics, chemistry, and engineering principles<br>
-                    • Final year project in chemical process simulation
-                </div>
-            </article>
+            </div>
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title">Current Project</h2>
-            <article class="card project-card">
-                <div class="card-icon">
-                    <i class="fas fa-language"></i>
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <div class="timeline-date">Active Development</div>
+                        <h3>French News Aggregation Pipeline</h3>
+                        <div class="timeline-company"><a href="https://github.com/roba7o/publicite_francais" target="_blank" style="color: #666666; text-decoration: none;">↗ View on GitHub</a></div>
+                        <p>Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.</p>
+                        <p style="color: #666666; font-size: 0.9rem; margin-top: 15px;">Python 3.x • PostgreSQL • dbt • SQLAlchemy • Docker • BeautifulSoup4 • pytest • ruff • mypy</p>
+                    </article>
                 </div>
-                <h3>French News Aggregation Pipeline <a href="https://github.com/roba7o/publicite_francais" target="_blank" style="color: #3498db; font-size: 0.8em;"><i class="fas fa-external-link-alt"></i></a></h3>
-                <p style="color: #5a6c7d; margin-bottom: 15px; line-height: 1.7;">
-                    Built a French news aggregation pipeline using Python, PostgreSQL, and dbt for data collection and transformation, with Docker containerization and comprehensive pytest testing suite.
-                </p>
-                
-                <div class="tech-stack">
-                    <span class="tech-tag">Python 3.x</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">dbt</span>
-                    <span class="tech-tag">SQLAlchemy</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">BeautifulSoup4</span>
-                    <span class="tech-tag">pytest</span>
-                    <span class="tech-tag">ruff</span>
-                    <span class="tech-tag">mypy</span>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="grid grid-3">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:rhm14148@gmail.com">rhm14148@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+44(0) 7494 297312</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/rhm14148" target="_blank">linkedin.com/in/rhm14148</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/roba7o" target="_blank">github.com/roba7o</a>
+                    </div>
                 </div>
-                
-                <p style="font-size: 0.9rem; color: #7f8c8d; font-style: italic; margin-bottom: 20px;">
-                    Architecture: Web Scraping → PostgreSQL → dbt Transformations → Analytics Tables
-                </p>
-                
-                <span class="status-badge">🚀 Active Development</span>
-            </article>
+            </div>
         </section>
 
         <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="info-grid">
-                <div>
-                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Languages</h3>
-                    <div class="info-item">
-                        <span>English</span>
-                        <span style="color: #3498db; font-weight: 600;">Native</span>
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Languages</h3>
+                        <div class="info-item">
+                            <span>English</span>
+                            <span style="color: #000000; font-weight: 600;">Native</span>
+                        </div>
+                        <div class="info-item">
+                            <span>French</span>
+                            <span style="color: #000000; font-weight: 600;">B2</span>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <span>French</span>
-                        <span style="color: #3498db; font-weight: 600;">B2</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Interests</h3>
-                    <div class="interest-item">
-                        <i class="fas fa-mountain"></i>
-                        <span>Rock Climbing</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-running"></i>
-                        <span>Ultramarathons</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-swimmer"></i>
-                        <span>Swimming</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-language"></i>
-                        <span>Language Learning</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-code"></i>
-                        <span>Coding</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-book"></i>
-                        <span>Reading</span>
+                    <div class="card">
+                        <h3>Interests</h3>
+                        <div class="interest-list">
+                            <span><i class="fas fa-mountain" style="margin-right: 10px; color: #666666;"></i>Rock Climbing</span>
+                            <span><i class="fas fa-running" style="margin-right: 10px; color: #666666;"></i>Ultramarathons</span>
+                            <span><i class="fas fa-swimmer" style="margin-right: 10px; color: #666666;"></i>Swimming</span>
+                            <span><i class="fas fa-language" style="margin-right: 10px; color: #666666;"></i>Language Learning</span>
+                            <span><i class="fas fa-laptop-code" style="margin-right: 10px; color: #666666;"></i>Coding</span>
+                            <span><i class="fas fa-book" style="margin-right: 10px; color: #666666;"></i>Reading</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container container-padded">
+            <p>&copy; 2024 Robert Hugh Matthew. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         // Smooth scrolling for navigation
