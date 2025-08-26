@@ -194,7 +194,11 @@
         }
 
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-contact {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
         /* Cards */
@@ -606,6 +610,25 @@
                 padding: 0 20px;
             }
             
+            .nav {
+                padding: 8px 0;
+            }
+            
+            .nav-list {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .nav-list a {
+                font-size: 0.75rem;
+                padding: 5px 8px;
+                letter-spacing: 0.3px;
+            }
+            
+            .nav-profile-container {
+                display: none;
+            }
+            
             .exp-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -672,45 +695,47 @@
         <section id="skills" class="section">
             <div class="container">
                 <h2 class="section-title">Skills</h2>
-                <div class="grid grid-2">
-                    <article class="card">
-                        <h3><i class="fab fa-python" style="margin-right: 10px; color: #666666;"></i>Python & Data</h3>
-                        <ul>
-                            <li>Python 3.x, Pandas, SQLAlchemy</li>
-                            <li>PostgreSQL, SQL, Database Management</li>
-                            <li>Custom ETLs, dbt (Data Build Tool)</li>
-                            <li>Data Analytics, BI Tools (PowerBI, Sigma)</li>
-                        </ul>
+                <div class="grid grid-3">
+                    <article class="timeline-card">
+                        <div class="timeline-date">Core</div>
+                        <h3>Python</h3>
+                        <div class="timeline-company"><i class="fab fa-python" style="margin-right: 10px; color: #666666;"></i>Primary Language</div>
+                        <p>Python 3.x • Pandas • SQLAlchemy • Object-Oriented Programming</p>
                     </article>
 
-                    <article class="card">
-                        <h3><i class="fas fa-cloud" style="margin-right: 10px; color: #666666;"></i>Cloud & Platform</h3>
-                        <ul>
-                            <li>AWS (S3, Redshift)</li>
-                            <li>Snowflake, BigQuery</li>
-                            <li>Cloud data warehousing</li>
-                            <li>Platform analytics</li>
-                        </ul>
+                    <article class="timeline-card">
+                        <div class="timeline-date">Data</div>
+                        <h3>Databases</h3>
+                        <div class="timeline-company"><i class="fas fa-database" style="margin-right: 10px; color: #666666;"></i>Data Management</div>
+                        <p>PostgreSQL • SQL • Database Design • Data Modeling</p>
                     </article>
 
-                    <article class="card">
-                        <h3><i class="fas fa-vial" style="margin-right: 10px; color: #666666;"></i>Testing & Automation</h3>
-                        <ul>
-                            <li>Selenium (Python & Java)</li>
-                            <li>pytest, Cucumber BDD</li>
-                            <li>Git version control, GitLab</li>
-                            <li>Test automation frameworks</li>
-                        </ul>
+                    <article class="timeline-card">
+                        <div class="timeline-date">ETL</div>
+                        <h3>Data Engineering</h3>
+                        <div class="timeline-company"><i class="fas fa-cogs" style="margin-right: 10px; color: #666666;"></i>Pipeline Development</div>
+                        <p>Custom ETLs • dbt (Data Build Tool) • Data Transformation • Workflow Orchestration</p>
                     </article>
 
-                    <article class="card">
-                        <h3><i class="fas fa-rocket" style="margin-right: 10px; color: #666666;"></i>DevOps & Pipelines</h3>
-                        <ul>
-                            <li>Docker & Docker Compose</li>
-                            <li>CI/CD (GitHub Actions, GitLab, Jenkins)</li>
-                            <li>Bash Scripting, Make automation</li>
-                            <li>Pipeline orchestration</li>
-                        </ul>
+                    <article class="timeline-card">
+                        <div class="timeline-date">Cloud</div>
+                        <h3>Platform & Analytics</h3>
+                        <div class="timeline-company"><i class="fas fa-cloud" style="margin-right: 10px; color: #666666;"></i>Cloud Technologies</div>
+                        <p>AWS (S3, Redshift) • Snowflake • BigQuery • BI Tools (PowerBI, Sigma)</p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-date">DevOps</div>
+                        <h3>Automation & CI/CD</h3>
+                        <div class="timeline-company"><i class="fas fa-rocket" style="margin-right: 10px; color: #666666;"></i>Platform Engineering</div>
+                        <p>Docker • GitHub Actions • GitLab CI • Jenkins • Bash Scripting</p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-date">QA</div>
+                        <h3>Testing</h3>
+                        <div class="timeline-company"><i class="fas fa-vial" style="margin-right: 10px; color: #666666;"></i>Quality Assurance</div>
+                        <p>Selenium (Python & Java) • pytest • Cucumber BDD • Test Automation</p>
                     </article>
                 </div>
             </div>
@@ -790,7 +815,7 @@
         <section id="contact" class="section">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
-                <div class="grid grid-3">
+                <div class="grid grid-contact">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:rhm14148@gmail.com">rhm14148@gmail.com</a>
