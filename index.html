@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Hugh Matthew — Data Engineer</title>
-    <meta name="description" content="Data Engineer in London. Projects, experience and CV.">
+    <title>Robert Matthew — Data Engineer</title>
+    <meta name="description" content="Data Engineer in London. Projects and CV.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roba7o.github.io/resume/">
-    <meta property="og:title" content="Robert Hugh Matthew — Data Engineer">
-    <meta property="og:description" content="Data Engineer in London. Projects, experience and CV.">
+    <meta property="og:title" content="Robert Matthew — Data Engineer">
+    <meta property="og:description" content="Data Engineer in London. Projects and CV.">
     <meta property="og:image" content="https://roba7o.github.io/resume/images/DSF0308_1000_NORMAL.jpg">
     <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
             --accent: #c0301e;
             --border: #e5e5e5;
             --border-strong: #0a0a0a;
-            --nav-h: 64px;
+            --nav-h: 56px;
             --max-w: 1100px;
         }
 
@@ -86,13 +86,13 @@
 
         /* Section scaffolding */
         .section {
-            padding: 80px 0;
+            padding: 30px 0;
             border-bottom: 1px solid var(--border);
         }
         .section:last-child { border-bottom: none; }
 
         .section-head {
-            margin-bottom: 48px;
+            margin-bottom: 16px;
         }
         .section-title {
             font-size: 2.25rem; font-weight: 600;
@@ -101,28 +101,33 @@
 
         /* Hero */
         .hero {
-            padding: 100px 0 120px;
+            padding: 40px 0;
             border-bottom: 1px solid var(--border);
+        }
+        .hero-row {
+            display: flex; flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 24px;
         }
         .hero-name {
             font-size: 4rem; font-weight: 700;
             letter-spacing: -0.03em; line-height: 1;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
         .hero-rule {
             width: 60px; height: 3px; background: var(--accent);
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
         .hero-role {
             font-size: 1.1rem; font-weight: 500;
-            color: var(--text-dim); margin-bottom: 32px;
+            color: var(--text-dim);
             letter-spacing: 0.2px;
         }
         .btn {
             display: inline-block;
             background: var(--text); color: var(--bg);
-            padding: 14px 28px;
-            font-size: 0.9rem; font-weight: 500;
+            padding: 8px 16px;
+            font-size: 0.82rem; font-weight: 500;
             letter-spacing: 0.3px;
             border: 1px solid var(--text);
         }
@@ -131,20 +136,17 @@
             border-color: var(--accent); text-decoration: none;
         }
 
-        /* Experience / Projects — label + content columns */
+        /* Project entries */
         .entry {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 40px;
-            padding: 32px 0;
+            padding: 14px 0;
             border-top: 1px solid var(--border);
         }
         .entry:first-child { border-top: none; padding-top: 0; }
         .entry-date {
             font-size: 0.78rem; font-weight: 500;
             color: var(--text-dim);
-            letter-spacing: 0.5px; text-transform: uppercase;
-            padding-top: 4px;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
         }
         .entry-body h3 {
             font-size: 1.15rem; font-weight: 600;
@@ -154,36 +156,12 @@
             font-size: 0.82rem; font-weight: 400;
             margin-left: 8px;
         }
-        .entry-body .entry-sub {
-            font-size: 0.9rem; color: var(--text-dim);
-            margin-bottom: 14px;
-        }
-        .entry-body p { font-size: 0.92rem; margin-bottom: 10px; }
-        .entry-body p strong { font-weight: 600; }
-        .entry-body code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            font-size: 0.86em;
-            background: #f4f4f4;
-            padding: 1px 5px;
-            border-radius: 2px;
-        }
-        .entry-body ul {
-            list-style: none; margin: 10px 0 0 0;
-        }
-        .entry-body li {
-            font-size: 0.92rem; line-height: 1.6;
-            padding-left: 20px; position: relative;
-            margin-bottom: 6px; color: var(--text);
-        }
-        .entry-body li::before {
-            content: '—'; position: absolute; left: 0;
-            color: var(--accent);
-        }
+        .entry-body p { font-size: 0.92rem; margin-bottom: 6px; }
 
         .tech-list {
             font-size: 0.82rem !important;
             color: var(--text-dim) !important;
-            margin-top: 14px !important;
+            margin-top: 8px !important;
             letter-spacing: 0.2px;
         }
         .tech-pill {
@@ -197,37 +175,9 @@
             border-radius: 2px;
         }
 
-        /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 48px;
-        }
-        .about-block h3 {
-            font-size: 0.72rem; font-weight: 500;
-            color: var(--accent);
-            letter-spacing: 1.5px; text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        .info-item {
-            display: flex; justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-        }
-        .info-item:last-child { border-bottom: none; }
-        .info-item span:last-child { color: var(--text-dim); }
-        .interest-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px 16px;
-        }
-        .interest-list li { font-size: 0.95rem; padding: 4px 0; }
-
         /* Footer */
         .footer {
-            padding: 40px 0 60px;
+            padding: 20px 0 24px;
             border-top: 1px solid var(--border);
             font-size: 0.82rem;
             color: var(--text-dim);
@@ -240,14 +190,11 @@
             .nav-inner { padding: 0 20px; }
             .nav-list { gap: 14px; }
             .nav-list a { font-size: 0.72rem; }
-            .hero { padding: 60px 0 80px; }
+            .hero { padding: 28px 0; }
             .hero-name { font-size: 2.5rem; }
-            .section { padding: 56px 0; }
-            .section-head { margin-bottom: 32px; }
+            .section { padding: 22px 0; }
+            .section-head { margin-bottom: 14px; }
             .section-title { font-size: 1.75rem; }
-            .entry { grid-template-columns: 1fr; gap: 12px; }
-            .about-grid { grid-template-columns: 1fr; }
-            .interest-list { grid-template-columns: 1fr; }
             .footer { flex-direction: column; gap: 8px; }
         }
     </style>
@@ -256,26 +203,25 @@
 
     <nav class="nav">
         <div class="nav-inner">
-            <div class="nav-brand" aria-label="Robert Hugh Matthew">
+            <div class="nav-brand" aria-label="Robert Matthew">
                 <img src="images/DSF0308_1000_GHIBLI copy.png" alt="">
                 <img src="images/DSF0308_1000_NORMAL.jpg" alt="">
             </div>
             <ul class="nav-list">
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="CV 2026.pdf" target="_blank">CV</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <h1 class="hero-name">Robert Hugh Matthew</h1>
+            <h1 class="hero-name">Robert Matthew</h1>
             <div class="hero-rule"></div>
-            <p class="hero-role">Data Engineer · London, UK</p>
-            <a class="btn" href="CV 2026.pdf" target="_blank">Download CV</a>
+            <div class="hero-row">
+                <p class="hero-role">Data Engineer · London, UK</p>
+                <a class="btn" href="CV 2026.pdf" target="_blank">Download CV</a>
+            </div>
         </div>
     </header>
 
@@ -286,132 +232,31 @@
                     <h2 class="section-title">Projects</h2>
                 </div>
                 <div class="entry">
-                    <div class="entry-date">2026</div>
                     <div class="entry-body">
-                        <h3>myshell <a href="https://github.com/roba7o/myshell" target="_blank">↗ GitHub</a></h3>
+                        <h3>myshell <a href="https://github.com/roba7o/myshell" target="_blank">↗ GitHub</a> <span class="entry-date">2026</span></h3>
                         <p>A Unix shell written from scratch in C, with builtins, redirection and pipes. Built to understand how processes and file descriptors actually work.</p>
                         <p class="tech-list">C • POSIX • fork/exec • make • AddressSanitizer</p>
                     </div>
                 </div>
                 <div class="entry">
-                    <div class="entry-date">2026</div>
                     <div class="entry-body">
-                        <h3>Cantonese Anki Deck Builder <a href="https://github.com/roba7o/anki-deck-builder" target="_blank">↗ GitHub</a></h3>
+                        <h3>Cantonese Anki Deck Builder <a href="https://github.com/roba7o/anki-deck-builder" target="_blank">↗ GitHub</a> <span class="entry-date">2026</span></h3>
                         <p>Turns a Cantonese word bank export into an Anki deck with audio for each word and example sentence. Feeds Jyutping to the synthesiser as phonemes, so characters with more than one reading are pronounced correctly.</p>
                         <p class="tech-list">Python • AWS Polly • SSML • genanki • unittest</p>
                     </div>
                 </div>
                 <div class="entry">
-                    <div class="entry-date">2026</div>
                     <div class="entry-body">
-                        <h3>Bookmarks API <a href="https://github.com/roba7o/bookmarks" target="_blank">↗ GitHub</a></h3>
+                        <h3>Bookmarks API <a href="https://github.com/roba7o/bookmarks" target="_blank">↗ GitHub</a> <span class="entry-date">2026</span></h3>
                         <p>A CRUD REST API built from the ground up, working through each layer of the stack rather than starting from a framework. JWT auth in ASGI middleware, async Postgres, and load tested with Locust.</p>
                         <p class="tech-list">Python • Starlette • asyncpg • SQLAlchemy Core • Pydantic • PyJWT • Docker • Locust</p>
                     </div>
                 </div>
                 <div class="entry">
-                    <div class="entry-date">2025</div>
                     <div class="entry-body">
-                        <h3>French News Scraper <a href="https://github.com/roba7o/publicite_francais" target="_blank">↗ GitHub</a></h3>
+                        <h3>French News Scraper <a href="https://github.com/roba7o/publicite_francais" target="_blank">↗ GitHub</a> <span class="entry-date">2025</span></h3>
                         <p>Scrapes French news sites daily and stores every word in Postgres, modelled with dbt, for learning vocabulary from real articles. Runs on GCP with concurrent fetching and CI on GitHub Actions.</p>
                         <p class="tech-list">Python • PostgreSQL • dbt • Docker • GCP • GitHub Actions</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Experience</h2>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">Dec 2025 — Present</div>
-                    <div class="entry-body">
-                        <h3>Data Engineer</h3>
-                        <div class="entry-sub">Onmo · London, UK</div>
-                        <p>Infrastructure and medallion modelling on a Databricks lakehouse: Terraform-managed AWS and Unity Catalog, ingestion from 20+ sources, and silver/gold pipelines in PySpark and Lakeflow Declarative Pipelines.</p>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">Nov 2024 — Nov 2025</div>
-                    <div class="entry-body">
-                        <h3>Data Engineer</h3>
-                        <div class="entry-sub">Profitero (Part of Publicis Groupe) · London, UK</div>
-                        <p>Built the analytics team's dbt infrastructure with separate dev and prod environments, introduced GitLab CI/CD, and assisted the migration from BigQuery to Snowflake.</p>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">May 2022 — Nov 2024</div>
-                    <div class="entry-body">
-                        <h3>Engineer</h3>
-                        <div class="entry-sub">2i · London, UK</div>
-                        <p>MySQL-to-Redshift migration and test automation in Python and Bash. Co-developed a Selenium test framework from scratch in Java, in a team of three.</p>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">2019 — 2022</div>
-                    <div class="entry-body">
-                        <h3>Biotechnology</h3>
-                        <ul>
-                            <li><strong>Cellexus</strong>: characterised a patented bioreactor, leading to a white paper with CPI and IBioIC</li>
-                            <li><strong>BioSep</strong>: techno-economic and life cycle assessment of a new green technology at a startup</li>
-                            <li><strong>Polish Academy of Sciences</strong>: research traineeship in catalysis and surface chemistry</li>
-                        </ul>                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Education</h2>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">Nov 2021</div>
-                    <div class="entry-body">
-                        <h3>MSc Industrial Biotechnology</h3>
-                        <div class="entry-sub">University of Strathclyde · IBioIC Scholarship</div>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="entry-date">June 2019</div>
-                    <div class="entry-body">
-                        <h3>MEng Chemical Engineering</h3>
-                        <div class="entry-sub">University of Strathclyde · iChemE Accredited</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Contact</h2>
-                </div>
-                <p>See my <a href="CV 2026.pdf" target="_blank">CV</a>.</p>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">About</h2>
-                </div>
-                <div class="about-grid">
-                    <div class="about-block">
-                        <h3>Languages</h3>
-                        <div class="info-item"><span>English</span><span>Native</span></div>
-                        <div class="info-item"><span>French</span><span>B1</span></div>
-                    </div>
-                    <div class="about-block">
-                        <h3>Interests</h3>
-                        <ul class="interest-list">
-                            <li>Rock Climbing</li>
-                            <li>Running</li>
-                            <li>Language Learning</li>
-                            <li>Reading</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -420,8 +265,8 @@
 
     <footer class="footer">
         <div class="container" style="display:flex;justify-content:space-between;width:100%;max-width:var(--max-w);">
-            <span>Robert Hugh Matthew</span>
-            <span>London, UK</span>
+            <span>Robert Matthew</span>
+            <span><a href="https://github.com/roba7o" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/robertmatt/" target="_blank">LinkedIn</a></span>
         </div>
     </footer>
 
