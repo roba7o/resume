@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+        width: 210mm;
+        padding: 33.2pt 41.5pt 0 42.75pt;
+        font-family: 'EB Garamond', Garamond, Georgia, serif;
+        font-size: 11pt;
+        line-height: 14.25pt;
+        color: #000;
+    }
+    a { color: #1155cc; }
+    h1 { font-size: 23pt; line-height: 31pt; font-weight: 700; }
+    .contact { padding-bottom: 3.6pt; border-bottom: 0.75pt solid #000; }
+    .contact .sep { padding: 0 5.1pt; font-size: 8pt; }
+    .summary { margin-top: 5.5pt; }
+    h2 {
+        font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07pt;
+        margin-top: 9pt; padding-bottom: 1pt; margin-bottom: 2.9pt;
+        border-bottom: 0.75pt solid #000;
+    }
+    .row { display: flex; justify-content: space-between; font-weight: 700; }
+    .job + .job { margin-top: 4.25pt; }
+    h2 + .job { margin-top: 5pt; }
+    .role { font-weight: 600; font-style: italic; }
+    .org-note { margin-top: 0.5pt; }
+    ul { list-style: none; margin-top: 0.75pt; }
+    h2 + ul { margin-top: -0.75pt; }
+    ul.tight li { margin-top: 0.45pt; }
+    li { position: relative; padding-left: 16pt; margin-top: 0.75pt; }
+    li::before {
+        content: ""; position: absolute; left: 5.4pt; top: 5pt;
+        width: 2.2pt; height: 2.2pt; background: #000;
+    }
+    .edu .row span:first-child { font-weight: 400; }
+    .edu b { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<h1>Robert Hugh Matthew</h1>
+<p class="contact"><a href="mailto:rob.hu.matt@gmail.com">rob.hu.matt@gmail.com</a><span class="sep">❖</span>+44 7494 297312<span class="sep">❖</span>London, UK<span class="sep">❖</span><a href="https://linkedin.com/in/robertmatt">linkedin.com/in/robertmatt</a></p>
+
+<p class="summary">Data Engineer experienced in Databricks and Snowflake, working across every layer of the stack from cloud infrastructure and Spark configuration up to SQL models, with a focus on medallion modelling and data governance. Enjoys brownfield projects, leveraging both legacy and modern technology to improve financial operations. Genuinely interested in computer science and engineering, building side projects and working through technical books outside work.</p>
+
+<h2>Work Experience</h2>
+
+<div class="job">
+    <div class="row"><span>Onmo – London, UK</span><span>Dec 2025 – Present</span></div>
+    <div class="role">Data Engineer</div>
+    <p class="org-note">One of three data engineers owning the Databricks lakehouse at an FCA-regulated credit lender (revolving loans).</p>
+    <ul>
+        <li>Led silver and gold layer modelling, setting the infrastructure, standards and style all later models follow</li>
+        <li>Developed modelling pipelines with PySpark and Lakeflow Declarative Pipelines, orchestrated as Databricks Jobs</li>
+        <li>Contributed to Terraform-managed governance: Unity Catalog permissions, column masking, Entra ID groups</li>
+        <li>Managed workspace and environment access, including promoting analyst code to production</li>
+        <li>Created alerting on revenue-generating processes and data quality; part of the platform on-call rota</li>
+        <li>Maintained ingestion for 20+ sources (Auto Loader, snapshots, Meltano, binlog CDC), adding new ones monthly</li>
+        <li>Reduced platform costs by removing unused resources, right-sizing compute and tuning Spark jobs</li>
+        <li>Managed infrastructure in Terraform (Databricks, S3, EC2, ECS, Kinesis, DynamoDB, RDS); Docker, Bash</li>
+    </ul>
+</div>
+
+<div class="job">
+    <div class="row"><span>Profitero (Part of Publicis Groupe) – London, UK</span><span>Nov 2024 – Nov 2025</span></div>
+    <div class="role">Data Engineer</div>
+    <ul>
+        <li>Initiated and architected the team's dbt pipeline: designed the project structure and incremental models</li>
+        <li>Moved the analytics team onto git/GitLab, establishing version-controlled, collaborative development for all models</li>
+        <li>Migrated analytics workloads from BigQuery to Snowflake; built Python/API transformations on GitLab CI/CD</li>
+    </ul>
+</div>
+
+<div class="job">
+    <div class="row"><span>2i – London, UK</span><span>May 2022 – Nov 2024</span></div>
+    <div class="role">Engineer (promoted from Junior, June 2023)</div>
+    <ul>
+        <li>Wrote and fixed SQLAlchemy/pandas transformations in a multi-year MySQL-to-Redshift migration, building test suites to validate data before load</li>
+        <li>Reduced legacy testing framework run-time by 80% through Python and Bash scripting</li>
+        <li>Co-developed a Java Selenium test framework from scratch in a 3-person team, extending coverage to Windows apps via WinAppDriver</li>
+    </ul>
+</div>
+
+<h2>Skills/Certs</h2>
+<ul class="tight">
+    <li><b>Languages:</b> Python, SQL, PySpark, Bash, Terraform</li>
+    <li><b>Data Platforms:</b> Databricks (Unity Catalog, Auto Loader, Lakeflow Connect, Declarative Pipelines, Jobs), Spark, Snowflake, Redshift, BigQuery, dbt, Meltano, PostgreSQL</li>
+    <li><b>Cloud &amp; Infrastructure:</b> AWS (S3, EC2, ECS, Kinesis, DynamoDB, RDS), GCP, Entra ID, Docker</li>
+    <li><b>CI/CD &amp; Testing:</b> GitLab CI/CD, GitHub Actions, Jenkins, pytest, Selenium</li>
+    <li><b>Certifications:</b> AWS Certified Solutions Architect – Associate (2026); AWS Certified Cloud Practitioner (2023)</li>
+</ul>
+
+<h2>Projects &amp; Writing</h2>
+<p>Side-project write-ups and code, from data pipelines to systems programming in C: <a href="https://roba7o.github.io/resume/">roba7o.github.io/resume</a></p>
+
+<h2>Education</h2>
+<div class="edu">
+    <div class="row"><span><b>MSc Industrial Biotechnology</b> – <i>University of Strathclyde (IBioIC Scholarship)</i></span><span>Grad. Nov 2021</span></div>
+    <div class="row"><span><b>MEng Chemical Engineering</b> – <i>University of Strathclyde</i></span><span>Grad. June 2019</span></div>
+</div>
+
+<h2>Additional Info</h2>
+<ul>
+    <li><b>Languages:</b> English (Native), French (B1 CEFR). <b>Interests:</b> rock-climbing, running, language learning.</li>
+</ul>
+
+</body>
+</html>
